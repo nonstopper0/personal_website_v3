@@ -1,0 +1,14 @@
+$dark: #222629 !default;
+$verydark: #16191b !default;
+$medium: #474B4F !default;
+$light: #6B6E70 !default;
+$accent1: #86C232 !default;
+$accent2: #61892F !default;
+$white: #FFF !default;
+
+
+@mixin mobile {
+    @media (max-width: 600px) {
+        @content;
+    }
+}

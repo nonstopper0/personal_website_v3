@@ -1,0 +1,13 @@
+@import 'SCSS/_theme.scss';
+
+
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  background-color: $dark;
+  color: $light;
+}
