@@ -26,11 +26,10 @@
             }
         } p {
             color: $accent1;
-
+            font-size: 20px;
             @include mobile {
                 margin: 5px;
             }
         }
     }
 }
-
