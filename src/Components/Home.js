@@ -9,16 +9,24 @@ export default class Home extends React.Component {
         }
     }
     componentDidMount() {
-        window.addEventListener('scroll', this.onWindowScroll)
+        window.addEventListener('scroll', this.onWindowScroll);
 
         // h1 typing css addons
-        let typeText = document.querySelector('#type')
-        setTimeout(()=> {
-            typeText.style.transform = 'scale(1.1)'
-        }, 1000)
-        setTimeout(() => {
-            typeText.style.borderRight = 'none'
-        }, 2000)
+        let typeText = document.querySelector('#line');
+        let border = true;
+        let changeAllowed = false
+        setTimeout(() => {changeAllowed = true}, 2000)
+        setInterval(() => {
+            if (changeAllowed) {
+                if (border == true) {
+                    typeText.style.opacity = '0';
+                    border = false;
+                } else {
+                    typeText.style.opacity = '1';
+                    border = true;  
+                }
+            }
+        }, 400)
 
     }
     onWindowScroll = (e) => {
@@ -38,7 +46,10 @@ export default class Home extends React.Component {
                 <div className="home-page1-container">
                     <div className="home-page1-body">
                         <ins>d</ins>
-                        <h1 id="type">Nathaniel Redmon</h1>
+                        <div className="home-page1-div">
+                            <h1 id="type">Nathaniel Redmon</h1>
+                            <div id="line"></div>
+                        </div>
                         <p>Full-stack developer</p>
                         <ins>c</ins>
                     </div>

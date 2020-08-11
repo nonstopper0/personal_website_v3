@@ -15,25 +15,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
-        h1 {
-            font-family: 'Sprite';
-            text-align: center;
-            font-size: 80px;
-            font-weight: 400;
-            color: $white;
-            margin: 0px;
-            animation: type 2s steps(16, end);
-            overflow: hidden;
-            width: 16ch;
-            white-space: nowrap;
-            border-right: 3px solid white;
-            transition: 1s ease;
-
-            @include mobile {
-                font-size: 40px;
-            }
-        } p {
+        
+        p {
             font-weight: 300;
             margin: 0px;
             color: $light;
@@ -51,6 +34,39 @@
             animation: extras 1s ease;
             width: 100px;
         }
+
+        .home-page1-div {
+            display: flex;
+            align-items: center;
+
+            h1 {
+                font-family: 'Sprite';
+                text-align: center;
+                font-size: 80px;
+                font-weight: 400;
+                color: $white;
+                margin: 0px;
+                animation: type 2s steps(16, end);
+                overflow: hidden;
+                width: 16ch;
+                white-space: nowrap;
+                padding-right: 4px;
+    
+                @include mobile {
+                    font-size: 40px;
+                }
+            } 
+            
+            #line {
+                height: 90px;
+                width: 1px;
+                background-color: white;
+
+                @include mobile {
+                    height: 40px;
+                }
+            }
+        } 
     }
 }
 .home-page2-container {
