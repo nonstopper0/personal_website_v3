@@ -5,7 +5,6 @@ export default class Home extends React.Component {
     constructor() {
         super()
         this.state = {
-            loading: true
         }
     }
     componentDidMount() {
@@ -33,34 +32,40 @@ export default class Home extends React.Component {
         }, 400)
     }
     onWindowScroll = (e) => {
+        // Decoration Parallax
         let windowHeight = window.innerHeight
         let scroll = window.pageYOffset
         let parallax1 = scroll * .2
         let parallax2 = scroll * .4
         let parallax3 = scroll * -1
 
-        
-
-
+        let decoration1 = document.querySelector('#home-decoration1')
         let decoration2 = document.querySelector('#home-decoration2')
         let decoration3 = document.querySelector('#home-decoration3')
+        let mainText = document.querySelector('.home-page1-body')
 
-
+        decoration1.style.transform = `translate3d(0px, ${parallax1}px, 0px)`
         decoration2.style.transform = `translate3d(0px, ${parallax2}px, 0px)`
         decoration3.style.transform = `translate3d(0px, ${parallax3}px, 0px)`
 
-        let aboutMeTop = document.querySelector(".home-page2-box1").getBoundingClientRect().top
-        let aboutme = 0
-        let distanceToTarget = aboutMeTop - windowHeight/2
-        console.log('distance to target: ', distanceToTarget)
-        if (distanceToTarget > 0) {
-            console.log('LOADING..')
-        } else {
-            console.log('DONE..')
+        //console.log(decoration2.getBoundingClientRect().top - decoration2.getBoundingClientRect().height/4)
+
+        // About me Load in
+        let aboutMe = document.querySelector('.home-page2-box1')
+        let aboutMeTop = aboutMe.getBoundingClientRect().top
+        if (aboutMeTop - windowHeight/2 < 0) {
+            aboutMe.classList.add('fade-animation')
         }
-        let decoration1 = document.querySelector('#home-decoration1')
-        decoration1.style.transform = `translate(-50%, -50%) translate3d(0px, ${aboutme}px, 0px)`
-        
+
+        if ((aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4) > windowHeight/2 && aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4 > -(windowHeight/2)) {
+            aboutMe.style.filter = "blur(20px)"
+            console.log("blurring")
+        } 
+        if ((aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4) < windowHeight/2 && aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4 > -(windowHeight/2)) {
+            aboutMe.style.filter = "blur(0px)"
+            console.log('unblurring')
+        }
+        console.log(aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4 < windowHeight/2, aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4 < -(windowHeight/2))
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.onWindowScroll)
@@ -68,6 +73,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <div className="home-box"></div>
                 <div className="home-container">
                     <div className="home-decorations">
                         <p id="home-decoration1">d</p>

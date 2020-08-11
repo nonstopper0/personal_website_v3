@@ -1,5 +1,11 @@
 @import '../SCSS/_theme.scss';
 
+.fade-animation {
+    animation: zoom 2s ease;
+    opacity: 1 !important;
+}
+
+
 .home-container {
     overflow: hidden;
     background-color: $verydark;
@@ -38,6 +44,8 @@
             font-size: 1500px;
             margin: 0px;
             opacity: 1;
+            height: 500px;
+            width: 1000px;
         }
     }
 }
@@ -121,20 +129,20 @@
     }
 }
 
-
 .home-page2-container {
-    overflow: hidden;
     background-color: $verydark;
     height: fit-content;
     width: 100%;
 
     .home-page2-box1 {
+        filter: blur(20px);
+        opacity: 0;
         display: flex;
         flex-wrap: wrap;
         width: fit-content;
         height: fit-content;
-        margin: 50px auto;
-
+        margin: 150px auto;
+        transition: 2.5s ease;
         @include mobile {
             min-width: 0px;
             width: 95%;
@@ -188,5 +196,17 @@
         width: 0px;
     } to {
         width: 100px;
+    }
+}
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+        transform: scale(10)
+    } 50% {
+        opacity: 0.3;
+    } 80% {
+        transform: scale(1);
+        opacity: 1;
     }
 }
