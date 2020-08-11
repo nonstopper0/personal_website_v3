@@ -10,6 +10,16 @@ export default class Home extends React.Component {
     }
     componentDidMount() {
         window.addEventListener('scroll', this.onWindowScroll)
+
+        // h1 typing css addons
+        let typeText = document.querySelector('#type')
+        setTimeout(()=> {
+            typeText.style.transform = 'scale(1.1)'
+        }, 1000)
+        setTimeout(() => {
+            typeText.style.borderRight = 'none'
+        }, 2000)
+
     }
     onWindowScroll = (e) => {
         let windowSize = window.innerHeight-50
@@ -27,8 +37,10 @@ export default class Home extends React.Component {
             <React.Fragment>
                 <div className="home-page1-container">
                     <div className="home-page1-body">
-                        <h1>Nathaniel Redmon</h1>
+                        <ins>d</ins>
+                        <h1 id="type">Nathaniel Redmon</h1>
                         <p>Full-stack developer</p>
+                        <ins>c</ins>
                     </div>
                 </div>
             </React.Fragment>

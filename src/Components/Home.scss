@@ -17,19 +17,58 @@
         justify-content: center;
 
         h1 {
-            font-size: 50px;
+            font-family: 'Sprite';
+            text-align: center;
+            font-size: 80px;
+            font-weight: 400;
             color: $white;
             margin: 0px;
+            animation: type 2s steps(16, end);
+            overflow: hidden;
+            width: 16ch;
+            white-space: nowrap;
+            border-right: 3px solid white;
+            transition: 1s ease;
 
             @include mobile {
-                font-size: 30px;
+                font-size: 40px;
             }
         } p {
-            color: $accent1;
-            font-size: 20px;
+            font-weight: 300;
+            margin: 0px;
+            color: $light;
+            font-size: 28px;
             @include mobile {
-                margin: 5px;
             }
+        } ins {
+            font-size: 70px;
+            margin: 0px;
+            text-decoration: none;
+            overflow: hidden;
+            white-space: nowrap;
+            color: $accent1;
+            font-family: 'Sprite Extras';
+            animation: extras 1s ease;
+            width: 100px;
         }
+    }
+}
+.home-page2-container {
+
+}
+
+@keyframes type {
+    from {
+        width: 0ch;
+    } to {
+        width: 16ch;
+    }
+}
+
+@keyframes extras {
+    from {
+        width: 0px;
+    } to {
+        width: 100px;
     }
 }

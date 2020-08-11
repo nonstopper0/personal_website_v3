@@ -1,9 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;800&display=swap');
+@font-face {
+  font-family: 'Sprite';
+  src: url('./SCSS/fonts/Sprite\ Graffiti.otf')
+}
+@font-face {
+  font-family: 'Sprite Extras';
+  src: url('./SCSS/fonts/Sprite\ Graffiti\ Extras.otf')
+}
 @import 'SCSS/_theme.scss';
 
 body {
   margin: 0;
-  font-family: -apple-system, 'Quicksand', sans-serif;
+  font-family: -apple-system, 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $dark;
