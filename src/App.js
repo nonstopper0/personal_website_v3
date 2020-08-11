@@ -9,9 +9,6 @@ function App() {
   return (
     <HashRouter>
         <React.Fragment>
-          <header className='header'>
-            <h1>Hello</h1>
-          </header>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={''} />

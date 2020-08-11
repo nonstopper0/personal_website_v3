@@ -14,7 +14,13 @@ body {
   font-family: -apple-system, 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
   background-color: $dark;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 code {

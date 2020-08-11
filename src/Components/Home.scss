@@ -1,11 +1,55 @@
 @import '../SCSS/_theme.scss';
 
-.home-page1-container {
+.home-container {
+    overflow: hidden;
     background-color: $verydark;
+
+    .home-decorations {
+        font-family: 'Sprite Extras';
+        color: $dark;
+        opacity: .5;
+        position: relative;
+        z-index: 0;
+
+
+        #home-decoration1 {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            color: $accent2;
+            font-size: 400px;
+            margin: 0px;
+            transform: translate(-50%, -50%);
+            filter: blur(7px);
+        }
+        #home-decoration2 {
+            position: absolute;
+            top: 30%;
+            right: 10%;
+            font-size: 250px;
+            margin: 0px;
+            filter: blur(5px);
+        }
+        #home-decoration3 {
+            color: $accent2;
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            font-size: 1500px;
+            margin: 0px;
+            opacity: 1;
+        }
+    }
+}
+
+
+.home-page1-container {
     height: 100vh;
     width: 100%;
+    overflow: hidden;
 
     .home-page1-body {
+        z-index: 1;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -22,6 +66,7 @@
             color: $light;
             font-size: 28px;
             @include mobile {
+                font-size: 20px;
             }
         } ins {
             font-size: 70px;
@@ -33,6 +78,12 @@
             font-family: 'Sprite Extras';
             animation: extras 1s ease;
             width: 100px;
+
+            @include mobile {
+                font-size: 30px;
+                width: 32px;
+                animation: none;
+            }
         }
 
         .home-page1-div {
@@ -69,8 +120,59 @@
         } 
     }
 }
-.home-page2-container {
 
+
+.home-page2-container {
+    overflow: hidden;
+    background-color: $verydark;
+    height: fit-content;
+    width: 100%;
+
+    .home-page2-box1 {
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        height: fit-content;
+        margin: 50px auto;
+
+        @include mobile {
+            min-width: 0px;
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .home-page2-box1-img {
+            z-index: 1;
+            width: 400px;
+            height: 400px;
+            background-color: grey;
+            margin: 20px 30px;
+
+            @include mobile {
+                margin: 20px auto;
+            }
+        }
+
+        .home-page2-box1-text {
+            z-index: 1;
+            color: $light;
+            max-width: 700px;
+            min-width: 300px;
+
+            h2 {
+                font-family: 'Sprite';
+                color: $white;
+                font-size: 40px;
+                margin: 0px;
+            } ins {
+                font-family: 'Sprite Extras';
+                text-decoration: none;
+                color: $accent1;
+                font-size: 30px;
+                margin: 0px;
+            }
+        }
+    }
 }
 
 @keyframes type {
