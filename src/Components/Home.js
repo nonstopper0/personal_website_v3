@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Home.scss'
 
 export default class Home extends React.Component {
     constructor() {
         super()
         this.state = {
+            scrollHeight: 0
         }
     }
     componentDidMount() {
@@ -50,22 +51,32 @@ export default class Home extends React.Component {
 
         //console.log(decoration2.getBoundingClientRect().top - decoration2.getBoundingClientRect().height/4)
 
-        // About me Load in
+        // Load in elements
         let aboutMe = document.querySelector('.home-page2-box1')
-        let aboutMeTop = aboutMe.getBoundingClientRect().top
-        if (aboutMeTop - windowHeight/2 < 0) {
+        if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
             aboutMe.classList.add('fade-animation')
         }
-
-        if ((aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4) > windowHeight/2 && aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4 > -(windowHeight/2)) {
-            aboutMe.style.filter = "blur(20px)"
-            console.log("blurring")
-        } 
-        if ((aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4) < windowHeight/2 && aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4 > -(windowHeight/2)) {
-            aboutMe.style.filter = "blur(0px)"
-            console.log('unblurring')
+        let header = document.querySelector('.home-header')
+        if (scroll > windowHeight) {
+            console.log('show header')
         }
-        console.log(aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4 < windowHeight/2, aboutMe.getBoundingClientRect().top - aboutMe.getBoundingClientRect().height/4 < -(windowHeight/2))
+
+        console.log(aboutMe.getBoundingClientRect().top, windowHeight/10)
+
+        // check if the scrollbar is moving up or down by comparing last marked scroll position and current
+        if (this.state.scrollHeight > scroll) {
+            if (aboutMe.getBoundingClientRect().bottom > -100 && aboutMe.getBoundingClientRect().bottom < 200) {
+                aboutMe.classList.remove('blurred')
+            }
+        } else if (this.state.scrollHeight < scroll) {
+            if (aboutMe.getBoundingClientRect().bottom > -100 && aboutMe.getBoundingClientRect().bottom < 200) {
+                aboutMe.classList.add('blurred')
+            }
+        }
+        // set scroll position to check it the next time a scroll is performed
+        this.setState({
+            scrollHeight: scroll
+        })
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.onWindowScroll)
@@ -73,7 +84,6 @@ export default class Home extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="home-box"></div>
                 <div className="home-container">
                     <div className="home-decorations">
                         <p id="home-decoration1">d</p>
@@ -102,6 +112,9 @@ export default class Home extends React.Component {
                                 <p>Nisi fugiat ullamco consectetur sint. Nisi labore Lorem labore cupidatat ex occaecat nulla minim. Culpa sit reprehenderit dolor aliquip id ex occaecat laborum laborum laborum fugiat in magna aute.</p>
                             </div>
                         </div>
+                    </div>
+                    <div className="home-page3-container">
+
                     </div>
                 </div>
             </React.Fragment>
