@@ -15,6 +15,26 @@ nav {
     transition: left .4s ease;
     background-color: $extremelydark;
 
+    #canDiv {
+        position: absolute;
+        bottom: 5px;
+        left: -20px;
+        width: 130px;
+        
+        &:hover {
+            transform: scale(0.9)
+            
+        }
+
+        @include mobile {
+            display: none;
+        }
+
+        #canButton {
+            width: 30px;
+        }
+    }
+
     #navLine {
         position: absolute;
         width: 1px;
@@ -47,6 +67,7 @@ nav {
 
         &:hover {
             background-color: black;
+
         }
 
         &:focus {
@@ -127,12 +148,33 @@ nav {
         #arrow {
             z-index: 1;
             position: absolute;
-            top: 500px;
+            top: 40vh;
             transform: scale(-1) rotate(-130deg);
-            left: 5%;
+            left: 1%;
             color: $accent1;
             width: 500px;
-            margin: 0px;            
+            margin: 0px;     
+            animation: popIn 3s ease;
+            
+            @include mobile {
+                width: 300px;
+                top: 70vh;
+                left: -30%;
+            }
+        }
+        #can {
+            z-index: 0;
+            position: absolute;
+            top: 60vh;
+            transform: rotate(-40deg);
+            right: -200px;
+            opacity: 1;
+            width: 500px;
+            margin: 0px;         
+            
+            @include mobile {
+                width: 300px;
+            }
         }
     }
 }
@@ -370,5 +412,18 @@ nav {
         transform: translate(0px, 0px)
     } to {
         transform: translate(-4000px, 0px)
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(1);
+    } 50% {
+        transform: scale(1)
+    } 60% {
+        transform: scale(1)
+    } 80% {
+        transform: scale(1)
+    } 100% {
     }
 }

@@ -5,6 +5,8 @@ import {MdPerson} from 'react-icons/md'
 
 import Me from '../SCSS/images/me.jpg'
 import Arrow from '../SCSS/images/arrow.svg' 
+import Can from '../SCSS/images/can.svg'
+import NavCan from '../SCSS/images/navcan.svg'
 
 export default class Home extends React.Component {
     constructor() {
@@ -19,7 +21,7 @@ export default class Home extends React.Component {
     componentDidMount() {
         window.addEventListener('scroll', this.onWindowScroll);
 
-        if (window.screen.width > 500) {
+        if (window.screen.width > 600) {
             let nav = document.querySelector('nav')
             nav.addEventListener('mouseenter', () => {
                 nav.style.left = '0px'
@@ -67,13 +69,17 @@ export default class Home extends React.Component {
 
         console.log(aboutMe.getBoundingClientRect().bottom)
 
+        let leeway = 100
+        if (window.screen.width > 600) { 
+            leeway = 200
+        }
         // check if the scrollbar is moving up or down by comparing last marked scroll position and current
         if (this.state.scrollHeight > scroll) {
-            if (aboutMe.getBoundingClientRect().bottom > -100 && aboutMe.getBoundingClientRect().bottom < 200) {
+            if (aboutMe.getBoundingClientRect().bottom > -100 && aboutMe.getBoundingClientRect().bottom < leeway) {
                 aboutMe.classList.remove('blurred')
             }
         } else if (this.state.scrollHeight < scroll) {
-            if (aboutMe.getBoundingClientRect().bottom > -100 && aboutMe.getBoundingClientRect().bottom < 300) {
+            if (aboutMe.getBoundingClientRect().bottom > -100 && aboutMe.getBoundingClientRect().bottom < leeway) {
                 aboutMe.classList.add('blurred')
             }
         }
@@ -86,11 +92,27 @@ export default class Home extends React.Component {
         document.querySelector('nav').removeEventListener('mouseover', this.navHandler())
         window.removeEventListener('scroll', this.onWindowScroll)
     }
+    deGraffiti() {
+        let graffiti = document.querySelectorAll('.graffiti')
+        for (let i = 0; i < graffiti.length; i++) {
+            if (graffiti[i].style.display != 'none') {
+                graffiti[i].style.display = 'none'
+            } else {
+                graffiti[i].style.display = 'block'
+            }
+        }
+    }
     render() {
         return (
             <React.Fragment>
                 <nav>
                 <div id="navLine"></div>
+                <button onClick={() => this.deGraffiti()}>
+                    <div id="canDiv">
+                        <p className="hidden">Graffiti</p>
+                        <img id="canButton" src={NavCan} alt="can" />
+                    </div>
+                </button>
                 <button onClick={() => window.scrollTo(0, this.homeRef.current.offsetTop)}>
                     <div>
                         <p className="hidden">Home</p>
@@ -112,13 +134,14 @@ export default class Home extends React.Component {
                 </nav>
                 <div ref={this.homeRef} className="home-container">
                     <div className="home-decorations">
-                        <p id="home-decoration1">i</p>
-                        <img id="arrow" alt="Arrow" src={Arrow}/>
+                        <p className="graffiti" id="home-decoration1">i</p>
+                        <img className="graffiti" id="arrow" alt="Arrow" src={Arrow}/>
+                        <img className="graffiti" id="can" alt="can" src={Can}/>
                     </div>
                     <div className="home-page1-container">
                         <h1 id="big">NATHANIEL</h1>
                         <div className="home-page1-body">
-                            <ins>d</ins>
+                            <ins className="graffiti">d</ins>
                             <div className="home-page1-div">
                                 <h1>Nathaniel Redmon</h1>
                                 <div id="line"></div>
@@ -127,7 +150,7 @@ export default class Home extends React.Component {
                                 <p id="type">Full-stack developer</p>
                                 <div id="line2"></div> 
                             </div>
-                            <ins>c</ins>
+                            <ins className="graffiti">c</ins>
                         </div>
                     </div>
                     <div ref={this.aboutRef} className="home-page2-container">
@@ -135,7 +158,7 @@ export default class Home extends React.Component {
                             <img src={Me} alt="Nathaniel Redmon" className="home-page2-box1-img"></img>
                             <div className="home-page2-box1-text">
                                 <h2>About me</h2>
-                                <ins>c</ins>
+                                <ins className="graffiti">c</ins>
                                 <p>Nisi fugiat ullamco consectetur sint. Nisi labore Lorem labore cupidatat ex occaecat nulla minim. Culpa sit reprehenderit dolor aliquip id ex occaecat laborum laborum laborum fugiat in magna aute.</p>
                             </div>
                         </div>
