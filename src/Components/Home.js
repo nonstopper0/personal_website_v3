@@ -18,10 +18,11 @@ export default class Home extends React.Component {
         this.downloadRef = React.createRef();
         this.homeRef = React.createRef();
     }
+
     componentDidMount() {
         window.addEventListener('scroll', this.onWindowScroll);
-
-        if (window.screen.width > 600) {
+        
+        if (window.screen.width > 500) {
             let nav = document.querySelector('nav')
             nav.addEventListener('mouseenter', () => {
                 nav.style.left = '0px'
@@ -31,6 +32,14 @@ export default class Home extends React.Component {
             })
         }
 
+
+        // blur the window
+        // window.onblur = () => {
+        //     document.querySelector('.blurBox').style.opacity = '1'
+        // }
+        // window.onfocus = () => {
+        //     document.querySelector('.blurBox').style.opacity = '0'
+        // }
 
 
         // mainText typing javascript
@@ -45,7 +54,7 @@ export default class Home extends React.Component {
         setTimeout(() => { document.querySelector('#line2').style.opacity = '0'}, 3000)
         setInterval(() => {
             if (changeAllowed) {
-                if (border == true) {
+                if (border === true) {
                     typeText.style.opacity = '0';
                     border = false;
                 } else {
@@ -55,23 +64,22 @@ export default class Home extends React.Component {
             }
         }, 400)
     }
+
     onWindowScroll = (e) => {
-        // Decoration Parallax
         let windowHeight = window.innerHeight
         let scroll = window.pageYOffset
 
 
         // Load in elements
+        let mainText = document.querySelector('.home-page1-body')
         let aboutMe = document.querySelector('.home-page2-box1')
         if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
             aboutMe.classList.add('fade-animation')
         }
 
-        console.log(aboutMe.getBoundingClientRect().bottom)
-
         let leeway = 100
         if (window.screen.width > 600) { 
-            leeway = 200
+            leeway = 300
         }
         // check if the scrollbar is moving up or down by comparing last marked scroll position and current
         if (this.state.scrollHeight > scroll) {
@@ -88,10 +96,12 @@ export default class Home extends React.Component {
             scrollHeight: scroll
         })
     }
+
     componentWillUnmount() {
         document.querySelector('nav').removeEventListener('mouseover', this.navHandler())
         window.removeEventListener('scroll', this.onWindowScroll)
     }
+
     deGraffiti() {
         let graffiti = document.querySelectorAll('.graffiti')
         for (let i = 0; i < graffiti.length; i++) {
@@ -104,33 +114,34 @@ export default class Home extends React.Component {
     }
     render() {
         return (
-            <React.Fragment>
+            <div className="page-container">
+                <div className="blurBox"></div>
                 <nav>
-                <div id="navLine"></div>
-                <button onClick={() => this.deGraffiti()}>
-                    <div id="canDiv">
-                        <p className="hidden">Graffiti</p>
-                        <img id="canButton" src={NavCan} alt="can" />
-                    </div>
-                </button>
-                <button onClick={() => window.scrollTo(0, this.homeRef.current.offsetTop)}>
-                    <div>
-                        <p className="hidden">Home</p>
-                        <FaHome />
-                    </div>
-                </button>
-                <button onClick={() => window.scrollTo(0, this.aboutRef.current.offsetTop)}>
-                    <div>
-                        <p className="hidden">About</p>
-                        <MdPerson />
-                    </div>
-                </button>
-                <button onClick={() => window.scrollTo(0, this.downloadRef.current.offsetTop)}>
-                    <div>
-                        <p className="hidden">Download</p>
-                        <FaDownload />
-                    </div>
-                </button>
+                    <div id="navLine"></div>
+                    <button id="canBtn" onClick={() => this.deGraffiti()}>
+                        <div id="canDiv">
+                            <p className="hidden">Graffiti</p>
+                            <img id="canButton" src={NavCan} alt="can" />
+                        </div>
+                    </button>
+                    <button onClick={() => window.scrollTo(0, this.homeRef.current.offsetTop)}>
+                        <div>
+                            <p className="hidden">Home</p>
+                            <FaHome />
+                        </div>
+                    </button>
+                    <button onClick={() => window.scrollTo(0, this.aboutRef.current.offsetTop)}>
+                        <div>
+                            <p className="hidden">About</p>
+                            <MdPerson />
+                        </div>
+                    </button>
+                    <button onClick={() => window.scrollTo(0, this.downloadRef.current.offsetTop)}>
+                        <div>
+                            <p className="hidden">Download</p>
+                            <FaDownload />
+                        </div>
+                    </button>
                 </nav>
                 <div ref={this.homeRef} className="home-container">
                     <div className="home-decorations">
@@ -159,15 +170,26 @@ export default class Home extends React.Component {
                             <div className="home-page2-box1-text">
                                 <h2>About me</h2>
                                 <ins className="graffiti">c</ins>
-                                <p>Nisi fugiat ullamco consectetur sint. Nisi labore Lorem labore cupidatat ex occaecat nulla minim. Culpa sit reprehenderit dolor aliquip id ex occaecat laborum laborum laborum fugiat in magna aute.</p>
+                                <p>
+                                Currently located in <span>Denver, Colorado.</span>
+                                I am a <span>Full-stack developer</span> that loves every aspect of programming. 
+                                I use my development skills to create my own ideas and businesses while also taking time to learn something new and noteworthy every day. 
+                                When I'm not working on my next project or idea you can find me out at the race-track or in the mountains doing what I love.
+                                </p>
+                            </div>
+                        </div>
+                        <img className="graffiti" id="arrow" alt="Arrow" src={Arrow}/>
+                        <div className="home-page2-box2">
+                            <div className="home-page2-box2-text">
+                                <p id="home-decoration2">b</p>
+                                <h2>TECH STACK</h2>
                             </div>
                         </div>
                     </div>
                     <div className="home-page3-container">
-
                     </div>
                 </div>
-            </React.Fragment>
+            </div>
         )
     }
 }
