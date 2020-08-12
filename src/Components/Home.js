@@ -3,7 +3,8 @@ import './Home.scss'
 import {FaHome, FaDownload} from 'react-icons/fa'
 import {MdPerson} from 'react-icons/md'
 
-import Me from '../SCSS/images/me.jpg' 
+import Me from '../SCSS/images/me.jpg'
+import Arrow from '../SCSS/images/arrow.svg' 
 
 export default class Home extends React.Component {
     constructor() {
@@ -56,19 +57,7 @@ export default class Home extends React.Component {
         // Decoration Parallax
         let windowHeight = window.innerHeight
         let scroll = window.pageYOffset
-        let parallax1 = scroll * .2
-        let parallax2 = scroll * .4
-        let parallax3 = scroll * -.5
 
-        let decoration1 = document.querySelector('#home-decoration1')
-        let decoration2 = document.querySelector('#home-decoration2')
-        let decoration3 = document.querySelector('#home-decoration3')
-
-        decoration1.style.transform = `rotate(26deg) translate3d(0px, ${parallax1}px, 0px)`
-        decoration2.style.transform = `rotate(120deg) translate3d(0px, ${parallax2}px, 0px)`
-        decoration3.style.transform = `rotate(-40deg) translate3d(0px, ${parallax3}px, 0px)`
-
-        //console.log(decoration2.getBoundingClientRect().top - decoration2.getBoundingClientRect().height/4)
 
         // Load in elements
         let aboutMe = document.querySelector('.home-page2-box1')
@@ -101,6 +90,7 @@ export default class Home extends React.Component {
         return (
             <React.Fragment>
                 <nav>
+                <div id="navLine"></div>
                 <button onClick={() => window.scrollTo(0, this.homeRef.current.offsetTop)}>
                     <div>
                         <p className="hidden">Home</p>
@@ -122,9 +112,8 @@ export default class Home extends React.Component {
                 </nav>
                 <div ref={this.homeRef} className="home-container">
                     <div className="home-decorations">
-                        <p id="home-decoration1"></p>
-                        <p id="home-decoration2"></p>
-                        <p id="home-decoration3"></p>
+                        <p id="home-decoration1">i</p>
+                        <img id="arrow" alt="Arrow" src={Arrow}/>
                     </div>
                     <div className="home-page1-container">
                         <h1 id="big">NATHANIEL</h1>
