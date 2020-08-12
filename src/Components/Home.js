@@ -1,5 +1,9 @@
 import React from 'react';
 import './Home.scss'
+import {FaHome} from 'react-icons/fa'
+import {MdPerson} from 'react-icons/md'
+
+import Me from '../SCSS/images/me.jpg' 
 
 export default class Home extends React.Component {
     constructor() {
@@ -38,16 +42,15 @@ export default class Home extends React.Component {
         let scroll = window.pageYOffset
         let parallax1 = scroll * .2
         let parallax2 = scroll * .4
-        let parallax3 = scroll * -1
+        let parallax3 = scroll * -.5
 
         let decoration1 = document.querySelector('#home-decoration1')
         let decoration2 = document.querySelector('#home-decoration2')
         let decoration3 = document.querySelector('#home-decoration3')
-        let mainText = document.querySelector('.home-page1-body')
 
-        decoration1.style.transform = `translate3d(0px, ${parallax1}px, 0px)`
-        decoration2.style.transform = `translate3d(0px, ${parallax2}px, 0px)`
-        decoration3.style.transform = `translate3d(0px, ${parallax3}px, 0px)`
+        decoration1.style.transform = `rotate(26deg) translate3d(0px, ${parallax1}px, 0px)`
+        decoration2.style.transform = `rotate(120deg) translate3d(0px, ${parallax2}px, 0px)`
+        decoration3.style.transform = `rotate(-40deg) translate3d(0px, ${parallax3}px, 0px)`
 
         //console.log(decoration2.getBoundingClientRect().top - decoration2.getBoundingClientRect().height/4)
 
@@ -84,6 +87,10 @@ export default class Home extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <nav>
+                <button onClick={() => window.scrollTo(0, 0)}><FaHome /></button>
+                <button onClick={() => window.scrollTo(0, window.innerHeight)}><MdPerson /></button>
+                </nav>
                 <div className="home-container">
                     <div className="home-decorations">
                         <p id="home-decoration1">d</p>
@@ -103,9 +110,7 @@ export default class Home extends React.Component {
                     </div>
                     <div className="home-page2-container">
                         <div className="home-page2-box1">
-                            <div className="home-page2-box1-img">
-
-                            </div>
+                            <img src={Me} alt="Nathaniel Redmon" className="home-page2-box1-img"></img>
                             <div className="home-page2-box1-text">
                                 <h2>About me</h2>
                                 <ins>c</ins>
