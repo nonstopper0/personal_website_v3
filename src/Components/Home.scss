@@ -9,8 +9,54 @@ nav {
     opacity: 1;
     position: fixed;
     height: 100%;
-    width: 55px;
+    width: 110px;
+    left: -65px;
+    transition: left .4s ease;
     background-color: $extremelydark;
+
+    @include mobile {
+        left: 0px;
+        height: 60px;
+        width: 100%;
+        bottom: 0px;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    div {
+        width: 110px;
+        justify-content: flex-end; 
+        align-items: center;
+        margin-right: 20px;
+        display: flex;
+        transition: 1s ease;
+
+        &:hover {
+            justify-content: center;
+        }
+
+        @include mobile {
+            width: fit-content;
+            justify-content: center;
+            margin-right: 0px;
+        }
+
+        p {
+            text-align: right;
+            padding-right: 18px;
+            width: 100%;
+        }
+    }
+
+    .hidden {
+        opacity: 1;
+        color: $lighter;
+
+        @include mobile {
+            display: none;
+        }
+        
+    }
 
     button {
         background: none;
@@ -19,18 +65,15 @@ nav {
         svg {
             font-size: 25px;
             color: $accent1;
-            padding-bottom: 5px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.089);
         }
 
-        &:hover {
-            transform: scale(1.1)
-        }
         &:focus {
             outline: none;
         }
     }
 }
+
+
 .blurred {
     filter: blur(10px) !important;
     transform: scale(0.9);
@@ -62,16 +105,17 @@ nav {
 
 
         #home-decoration1 {
+            transform-origin: 0% 100%;
             position: absolute;
             top: 10%;
             left: 50%;
             color: $accent2;
             font-size: 400px;
             margin: 0px;
-            transform: rotate(26deg);
             filter: blur(7px);
         }
         #home-decoration2 {
+            transform-origin: 45% 75%;
             position: absolute;
             top: 30%;
             right: 10%;
@@ -81,10 +125,10 @@ nav {
             filter: blur(5px);
         }
         #home-decoration3 {
+            transform-origin: 0% 0% 100px;
             color: $accent2;
             position: absolute;
-            top: 50%;
-            right: 60%;
+            left: -50%;
             font-size: 1500px;
             margin: 0px;
             opacity: 1;
@@ -95,9 +139,19 @@ nav {
 
 
 .home-page1-container {
+    position: relative;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
+
+    #big {
+        position: absolute;
+        top: -200px;
+        margin: 0px;
+        font-size: 900px;
+        opacity: 0.15;
+        animation: textScroll 200s infinite linear;
+    }
 
     .home-page1-body {
         z-index: 1;
@@ -110,16 +164,8 @@ nav {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
-        p {
-            font-weight: 300;
-            margin: 0px;
-            color: $light;
-            font-size: 28px;
-            @include mobile {
-                font-size: 20px;
-            }
-        } ins {
+
+        ins {
             font-size: 70px;
             margin: 0px;
             text-decoration: none;
@@ -136,6 +182,7 @@ nav {
                 animation: none;
             }
         }
+        
 
         .home-page1-div {
             display: flex;
@@ -149,7 +196,7 @@ nav {
                 font-weight: 400;
                 color: $white;
                 margin: 0px;
-                animation: type 2s steps(16, end);
+                animation: type1 2s steps(16, end);
                 overflow: hidden;
                 width: 16ch;
                 white-space: nowrap;
@@ -170,6 +217,39 @@ nav {
                 }
             }
         } 
+
+        .home-page1-div2 {
+            display: flex;
+            align-items: center;
+
+            p {
+                opacity: 0;
+                font-weight: 300;
+                margin: 0px;
+                color: $light;
+                font-size: 28px;
+                text-align: center;
+                margin: 0px;
+                animation: type2 1.5s steps(20, end);
+                animation-delay: 1.9s;
+                overflow: hidden;
+                width: 16ch;
+                white-space: nowrap;
+                @include mobile {
+                    font-size: 20px;
+                }
+            } #line2 {
+                opacity: 0;
+                height: 30px;
+                width: 1px;
+                background-color: white;
+
+                @include mobile {
+                    height: 20px;
+                } 
+            }
+            
+        }
     }
 }
 
@@ -246,11 +326,20 @@ nav {
     width: 100%;
 }
 
-@keyframes type {
+@keyframes type1 {
     from {
         width: 0ch;
     } to {
         width: 16ch;
+    }
+}
+
+@keyframes type2 {
+    from {
+        opacity: 1;
+        width: 0ch;
+    } to {
+        opacity: 1;
     }
 }
 
@@ -272,5 +361,13 @@ nav {
     } 80% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes textScroll {
+    from {
+        transform: translate(0px, 0px)
+    } to {
+        transform: translate(-4000px, 0px)
     }
 }

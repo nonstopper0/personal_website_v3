@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.scss'
-import {FaHome} from 'react-icons/fa'
+import {FaHome, FaDownload} from 'react-icons/fa'
 import {MdPerson} from 'react-icons/md'
 
 import Me from '../SCSS/images/me.jpg' 
@@ -11,19 +11,35 @@ export default class Home extends React.Component {
         this.state = {
             scrollHeight: 0
         }
+        this.aboutRef = React.createRef();
+        this.downloadRef = React.createRef();
+        this.homeRef = React.createRef();
     }
     componentDidMount() {
         window.addEventListener('scroll', this.onWindowScroll);
 
-        let container = document.querySelector(".home-container")
-        let height = document.querySelector(".home-page2-container").getClientRects()
-        container.style.height = `${height}px`
+        if (window.screen.width > 500) {
+            let nav = document.querySelector('nav')
+            nav.addEventListener('mouseenter', () => {
+                nav.style.left = '0px'
+            })
+            nav.addEventListener('mouseleave', () => {
+                nav.style.left = '-65px'
+            })
+        }
 
-        // h1 typing css addons
+
+
+        // mainText typing javascript
         let typeText = document.querySelector('#line');
         let border = true;
         let changeAllowed = false
-        setTimeout(() => {changeAllowed = true}, 2000)
+        setTimeout(() => {
+            changeAllowed = true
+            document.querySelector('#type').style.opacity = '1'
+            document.querySelector('#line2').style.opacity = '1'
+        }, 2000)
+        setTimeout(() => { document.querySelector('#line2').style.opacity = '0'}, 3000)
         setInterval(() => {
             if (changeAllowed) {
                 if (border == true) {
@@ -59,12 +75,8 @@ export default class Home extends React.Component {
         if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
             aboutMe.classList.add('fade-animation')
         }
-        let header = document.querySelector('.home-header')
-        if (scroll > windowHeight) {
-            console.log('show header')
-        }
 
-        console.log(aboutMe.getBoundingClientRect().top, windowHeight/10)
+        console.log(aboutMe.getBoundingClientRect().bottom)
 
         // check if the scrollbar is moving up or down by comparing last marked scroll position and current
         if (this.state.scrollHeight > scroll) {
@@ -72,7 +84,7 @@ export default class Home extends React.Component {
                 aboutMe.classList.remove('blurred')
             }
         } else if (this.state.scrollHeight < scroll) {
-            if (aboutMe.getBoundingClientRect().bottom > -100 && aboutMe.getBoundingClientRect().bottom < 200) {
+            if (aboutMe.getBoundingClientRect().bottom > -100 && aboutMe.getBoundingClientRect().bottom < 300) {
                 aboutMe.classList.add('blurred')
             }
         }
@@ -82,33 +94,54 @@ export default class Home extends React.Component {
         })
     }
     componentWillUnmount() {
+        document.querySelector('nav').removeEventListener('mouseover', this.navHandler())
         window.removeEventListener('scroll', this.onWindowScroll)
     }
     render() {
         return (
             <React.Fragment>
                 <nav>
-                <button onClick={() => window.scrollTo(0, 0)}><FaHome /></button>
-                <button onClick={() => window.scrollTo(0, window.innerHeight)}><MdPerson /></button>
+                <button onClick={() => window.scrollTo(0, this.homeRef.current.offsetTop)}>
+                    <div>
+                        <p className="hidden">Home</p>
+                        <FaHome />
+                    </div>
+                </button>
+                <button onClick={() => window.scrollTo(0, this.aboutRef.current.offsetTop)}>
+                    <div>
+                        <p className="hidden">About</p>
+                        <MdPerson />
+                    </div>
+                </button>
+                <button onClick={() => window.scrollTo(0, this.downloadRef.current.offsetTop)}>
+                    <div>
+                        <p className="hidden">Download</p>
+                        <FaDownload />
+                    </div>
+                </button>
                 </nav>
-                <div className="home-container">
+                <div ref={this.homeRef} className="home-container">
                     <div className="home-decorations">
-                        <p id="home-decoration1">d</p>
-                        <p id="home-decoration2">d</p>
-                        <p id="home-decoration3">c</p>
+                        <p id="home-decoration1"></p>
+                        <p id="home-decoration2"></p>
+                        <p id="home-decoration3"></p>
                     </div>
                     <div className="home-page1-container">
+                        <h1 id="big">NATHANIEL</h1>
                         <div className="home-page1-body">
                             <ins>d</ins>
                             <div className="home-page1-div">
-                                <h1 id="type">Nathaniel Redmon</h1>
+                                <h1>Nathaniel Redmon</h1>
                                 <div id="line"></div>
                             </div>
-                            <p>Full-stack developer</p>
+                            <div className="home-page1-div2">
+                                <p id="type">Full-stack developer</p>
+                                <div id="line2"></div> 
+                            </div>
                             <ins>c</ins>
                         </div>
                     </div>
-                    <div className="home-page2-container">
+                    <div ref={this.aboutRef} className="home-page2-container">
                         <div className="home-page2-box1">
                             <img src={Me} alt="Nathaniel Redmon" className="home-page2-box1-img"></img>
                             <div className="home-page2-box1-text">
