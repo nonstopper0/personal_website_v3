@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { lazy, Suspense} from 'react';
 
-import Home from './Components/Home.js'
+import Loader from './Components/Loader.js'
 
 import './App.scss';
+import { MdLocalLaundryService } from 'react-icons/md';
 
-function App() {
-  return (
-        <React.Fragment>
+const Home = lazy(() => import('./Components/Home.js'))
+
+class App extends React.Component {
+  render() {
+    return (
+        <Suspense fallback={Loader()}>
           <Home />
           <footer className="app-footer">
             <p>&copy; Copyright 2020. Nathaniel Redmon</p>
             <div>
             </div>
           </footer>
-        </React.Fragment>
-  );
+        </Suspense>
+    )
+  }
 }
 
 export default App;
