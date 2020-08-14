@@ -24,6 +24,36 @@ const Body2 = React.forwardRef((props, ref) => {
             <div className="home-page2-box2">
                 <div className="home-page2-box2-text">
                     <h2>Technologies I use.</h2>
+                    <section className="home-page2-box2-list">
+                        <div>
+                            <h4>Technologies</h4>
+                            <ul>
+                                <li>Python</li>
+                                <li>Javscript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>SASS</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Frameworks</h4>
+                            <ul>
+                                <li>ExpressJS</li>
+                                <li>NodeJS</li>
+                                <li>ReactJS</li>
+                                <li>React Native</li>
+                                <li>Flask</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Services</h4>
+                            <ul>
+                                <li>Google Cloud</li>
+                                <li>Heroku</li>
+                            </ul>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>
