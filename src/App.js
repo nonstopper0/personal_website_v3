@@ -120,7 +120,7 @@ class App extends React.Component {
         case 'contact': 
           window.scrollTo(0, this.contactRef.current.offsetTop)
           break;
-        case 'download': 
+        case 'download':
           window.scrollTo(0, this.downloadRef.current.offsetTop)
           break;
         default: 

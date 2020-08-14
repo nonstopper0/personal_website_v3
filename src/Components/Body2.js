@@ -23,7 +23,7 @@ const Body2 = React.forwardRef((props, ref) => {
             <img className="graffiti" id="arrow" alt="Arrow" src={Arrow}/>
             <div className="home-page2-box2">
                 <div className="home-page2-box2-text">
-                    <h2>The Technologies I use.</h2>
+                    <h2>Technologies I use.</h2>
                 </div>
             </div>
         </section>
