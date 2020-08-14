@@ -3,7 +3,6 @@ import React, { lazy, Suspense} from 'react';
 import Loader from './Components/Loader.js'
 
 import './App.scss';
-import { MdLocalLaundryService } from 'react-icons/md';
 
 const Home = lazy(() => import('./Components/Home.js'))
 

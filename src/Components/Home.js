@@ -13,7 +13,6 @@ export default class Home extends React.Component {
         super()
         this.state = {
             scrollHeight: 0,
-            isLoading: true
         }
         this.aboutRef = React.createRef();
         this.downloadRef = React.createRef();
@@ -22,11 +21,6 @@ export default class Home extends React.Component {
 
     componentDidMount = async () => {
         
-        console.log(this.state.isLoading)
-        await this.setState({
-            isLoading: false
-        })
-        console.log(this.state.isLoading)
         window.addEventListener('scroll', this.onWindowScroll);
         
         if (window.screen.width > 500) {
