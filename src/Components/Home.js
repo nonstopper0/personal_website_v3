@@ -12,14 +12,21 @@ export default class Home extends React.Component {
     constructor() {
         super()
         this.state = {
-            scrollHeight: 0
+            scrollHeight: 0,
+            isLoading: true
         }
         this.aboutRef = React.createRef();
         this.downloadRef = React.createRef();
         this.homeRef = React.createRef();
     }
 
-    componentDidMount() {
+    componentDidMount = async () => {
+        
+        console.log(this.state.isLoading)
+        await this.setState({
+            isLoading: false
+        })
+        console.log(this.state.isLoading)
         window.addEventListener('scroll', this.onWindowScroll);
         
         if (window.screen.width > 500) {
@@ -44,25 +51,12 @@ export default class Home extends React.Component {
 
         // mainText typing javascript
         let typeText = document.querySelector('#line');
-        let border = true;
-        let changeAllowed = false
         setTimeout(() => {
-            changeAllowed = true
             document.querySelector('#type').style.opacity = '1'
             document.querySelector('#line2').style.opacity = '1'
+            typeText.classList.add('blinking')
         }, 2000)
         setTimeout(() => { document.querySelector('#line2').style.opacity = '0'}, 3000)
-        setInterval(() => {
-            if (changeAllowed) {
-                if (border === true) {
-                    typeText.style.opacity = '0';
-                    border = false;
-                } else {
-                    typeText.style.opacity = '1';
-                    border = true;  
-                }
-            }
-        }, 400)
     }
 
     onWindowScroll = (e) => {
@@ -71,7 +65,6 @@ export default class Home extends React.Component {
 
 
         // Load in elements
-        let mainText = document.querySelector('.home-page1-body')
         let aboutMe = document.querySelector('.home-page2-box1')
         if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
             aboutMe.classList.add('fade-animation')
@@ -105,7 +98,7 @@ export default class Home extends React.Component {
     deGraffiti() {
         let graffiti = document.querySelectorAll('.graffiti')
         for (let i = 0; i < graffiti.length; i++) {
-            if (graffiti[i].style.display != 'none') {
+            if (graffiti[i].style.display !== 'none') {
                 graffiti[i].style.display = 'none'
             } else {
                 graffiti[i].style.display = 'block'
@@ -114,6 +107,8 @@ export default class Home extends React.Component {
     }
     render() {
         return (
+            <React.Fragment>
+            { !this.state.isLoading ? 
             <div className="page-container">
                 <div className="blurBox"></div>
                 <nav>
@@ -182,7 +177,7 @@ export default class Home extends React.Component {
                         <div className="home-page2-box2">
                             <div className="home-page2-box2-text">
                                 <p id="home-decoration2">b</p>
-                                <h2>TECH STACK</h2>
+                                <h2>Skills</h2>
                             </div>
                         </div>
                     </div>
@@ -190,6 +185,9 @@ export default class Home extends React.Component {
                     </div>
                 </div>
             </div>
+            :
+            null }
+            </React.Fragment>
         )
     }
 }
