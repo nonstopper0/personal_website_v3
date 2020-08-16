@@ -26,14 +26,13 @@ const Body2 = React.forwardRef((props, ref) => {
                     <h2>Technologies I use.</h2>
                     <section className="home-page2-box2-list">
                         <div>
-                            <h4>Technologies</h4>
+                            <h4>Languages</h4>
                             <ul>
                                 <li>Python</li>
                                 <li>Javscript</li>
                                 <li>HTML</li>
                                 <li>CSS</li>
                                 <li>SASS</li>
-                                <li>MongoDB</li>
                             </ul>
                         </div>
                         <div>
@@ -49,6 +48,8 @@ const Body2 = React.forwardRef((props, ref) => {
                         <div>
                             <h4>Services</h4>
                             <ul>
+                                <li>MongoDB</li>
+                                <li>PostGreSQL</li>
                                 <li>Google Cloud</li>
                                 <li>Heroku</li>
                             </ul>
