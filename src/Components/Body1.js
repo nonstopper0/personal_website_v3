@@ -1,9 +1,11 @@
 import React from 'react';
 import './Body1.scss'
+import { RiMouseLine } from 'react-icons/ri'
 
 const Body1 = React.forwardRef((props, ref) => {
     return (
         <section ref={ref} className="home-page1-container">
+            <RiMouseLine className="mouse"/>
             <h1 id="big">NATHANIEL</h1>
             <div className="home-page1-body">
                 <ins className="graffiti">d</ins>

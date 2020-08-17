@@ -2,7 +2,6 @@ import React from 'react';
 import './Body2.scss'
 
 import Me from '../SCSS/images/me.jpg'
-import Arrow from '../SCSS/images/arrow.svg' 
 
 const Body2 = React.forwardRef((props, ref) => {
     return (
@@ -20,10 +19,9 @@ const Body2 = React.forwardRef((props, ref) => {
                     </p>
                 </div>
             </div>
-            <img className="graffiti" id="arrow" alt="Arrow" src={Arrow}/>
             <div className="home-page2-box2">
                 <div className="home-page2-box2-text">
-                    <h2>Technologies I use.</h2>
+                    <h3>Technologies I use.</h3>
                     <section className="home-page2-box2-list">
                         <div>
                             <h4>Languages</h4>

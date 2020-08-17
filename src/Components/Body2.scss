@@ -76,6 +76,7 @@
                 color: $white;
                 font-size: 40px;
                 margin: 0px;
+                text-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
             } ins {
                 font-family: 'Sprite Extras';
                 text-decoration: none;
@@ -119,11 +120,12 @@
             justify-content: center;
             align-items: center;
 
-            h2 {
+            h3 {
                 z-index: 1;
                 color: $white;
                 font-size: 80px;
                 margin: 0px;
+                text-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
 
                 @include mobile {
                     margin-top: 50px;

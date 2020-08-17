@@ -6,6 +6,16 @@
     width: 100vw;
     overflow: hidden;
 
+    .mouse {
+        color: $light;
+        left: 50%;
+        bottom: 20px;
+        font-size: 30px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        transition: 2s ease;
+    }
+
     #big {
         z-index: 0;
         position: absolute;

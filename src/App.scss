@@ -1,5 +1,6 @@
 @import 'SCSS/_theme.scss';
 
+
 .app-footer {
   display: flex;
   justify-content: center;
@@ -50,6 +51,41 @@
     @include mobile {
         padding-left: 0px;
     }
+
+
+    .home-corner {
+        position: fixed;
+        width: 10%;
+        z-index: 11;
+        opacity: .3;
+    
+    }
+    #one {
+        top: 0px;
+        left: 60px;
+        transform: rotate(90deg);
+        @include mobile {
+            left: 0px;
+        }
+    }
+    #two {
+        top: 0px;
+        right: 0px;
+        transform: rotate(180deg);
+    }
+    #three {
+        top: 85vh;
+        left: 60px;
+        @include mobile {
+            left: 0px;
+        }
+    }
+    #four {
+        top: 85vh;
+        right: 0px;
+        transform: rotate(270deg);
+    }
+
 
     .home-decorations {
         font-family: 'Sprite Extras';

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Arrow from './SCSS/images/arrow.svg'
 import Can from './SCSS/images/can.svg'
+import Edge from './SCSS/images/edge.svg'
 
 import Loader from './Components/Loader.js'
 import Body1 from './Components/Body1.js'
@@ -23,6 +23,8 @@ class App extends React.Component {
 
     componentDidMount = async () => {
 
+        await this.setState({loading: false})
+
         window.addEventListener('scroll', this.onWindowScroll);
 
         if (window.screen.width > 500) {
@@ -36,7 +38,7 @@ class App extends React.Component {
         }
       
       
-        // blur the window
+        //blur the window
         // window.onblur = () => {
         //     document.querySelector('.blurBox').style.opacity = '1'
         // }
@@ -60,6 +62,9 @@ class App extends React.Component {
         let windowHeight = window.innerHeight
         let scroll = window.pageYOffset
     
+        document.querySelector('.mouse').style.animation = "normal"
+        document.querySelector('.mouse').style.opacity = "0"
+  
     
         // Load in elements
         let aboutMe = document.querySelector('.home-page2-box1')
@@ -129,25 +134,34 @@ class App extends React.Component {
     } 
 
     render() {
-    return (
-        <div className="page-container">
-          <div className="blurBox"></div>
-          <Nav scrollC={this.scrollController} graffiti={this.deGraffiti}/>
-          <main className="home-container">
-            <div className="home-decorations">
-              <p className="graffiti" id="home-decoration1">i</p>
-              <img className="graffiti" id="arrow" alt="Arrow" src={Arrow}/>
-              <img className="graffiti" id="can" alt="can" src={Can}/>
+      return (
+          <React.Fragment>
+            { !this.state.loading ? 
+            <div className="page-container">
+              <div className="blurBox"></div>
+              <Nav scrollC={this.scrollController} graffiti={this.deGraffiti}/>
+              <main className="home-container">
+                <img className="home-corner" id="one" alt="corner addition" src={Edge}/>
+                <img className="home-corner" id="two" alt="corner addition" src={Edge}/>
+                <img className="home-corner" id="three" alt="corner addition" src={Edge}/>
+                <img className="home-corner" id="four" alt="corner addition" src={Edge}/>
+                <div className="home-decorations">
+                  <p className="graffiti" id="home-decoration1">i</p>
+                  <img className="graffiti" id="can" alt="can" src={Can}/>
+                </div>
+                <Body1 ref={this.homeRef} />
+                <Body2 ref={this.aboutRef} />
+                <div ref={this.downloadRef} style={{height: 1000, width: '100%'}}></div>
+              </main>
+              <footer className="app-footer">
+                <p>&copy; Copyright 2020. Nathaniel Redmon</p>
+              </footer>
             </div>
-            <Body1 ref={this.homeRef} />
-            <Body2 ref={this.aboutRef} />
-            <div ref={this.downloadRef} style={{height: 1000, width: '100%'}}></div>
-          </main>
-          <footer className="app-footer">
-            <p>&copy; Copyright 2020. Nathaniel Redmon</p>
-          </footer>
-        </div>
-        )
+            :
+            <Loader />
+            }
+          </React.Fragment>
+          )
     }
 }
 
