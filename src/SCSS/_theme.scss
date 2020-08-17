@@ -4,13 +4,18 @@ $extremelydark: #0f1113 !default;
 $medium: #474B4F !default;
 $light: #6B6E70 !default;
 $lighter: #a3a9ad !default;
-$accent1: #86C232 !default;
-$accent2: #61892F !default;
-$white: #FFF !default;
+$accent1: #da710f !default;
+$accent2: #c0731a !default;
+$white: rgb(218, 218, 218) !default;
 
 
 @mixin mobile {
     @media (max-width: 600px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 900px) {
         @content;
     }
 }
