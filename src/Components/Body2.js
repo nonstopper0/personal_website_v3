@@ -2,6 +2,7 @@ import React from 'react';
 import './Body2.scss'
 
 import Me from '../SCSS/images/me.jpg'
+import Logos from '../SCSS/images/technologies.png'
 
 const Body2 = React.forwardRef((props, ref) => {
     return (
@@ -22,37 +23,7 @@ const Body2 = React.forwardRef((props, ref) => {
             <div className="home-page2-box2">
                 <div className="home-page2-box2-text">
                     <h3>Technologies I use.</h3>
-                    <section className="home-page2-box2-list">
-                        <div>
-                            <h4>Languages</h4>
-                            <ul>
-                                <li>Python</li>
-                                <li>Javscript</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>SASS</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Frameworks</h4>
-                            <ul>
-                                <li>ExpressJS</li>
-                                <li>NodeJS</li>
-                                <li>ReactJS</li>
-                                <li>React Native</li>
-                                <li>Flask</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Services</h4>
-                            <ul>
-                                <li>MongoDB</li>
-                                <li>PostGreSQL</li>
-                                <li>Google Cloud</li>
-                                <li>Heroku</li>
-                            </ul>
-                        </div>
-                    </section>
+                    <img id="home-page2-box2-logos" alt="technology logos" src={Logos}/>
                 </div>
             </div>
         </section>

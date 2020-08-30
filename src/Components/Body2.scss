@@ -111,6 +111,10 @@
             margin: 0 auto;
         }
 
+        #home-page2-box2-logos {
+            width: 100%;
+        }
+
 
         .home-page2-box2-text {
             position: relative;
@@ -131,34 +135,6 @@
                     margin-top: 50px;
                     font-size: 40px;
                     text-align: center;
-                }
-            }
-
-            .home-page2-box2-list {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                align-items: baseline;
-                
-                div{
-                    margin: 30px 40px 30px 40px;
-                    text-align: center;
-
-                    @include mobile {
-                        margin: 5px 0px 5px 0px;
-                    }
-                    
-                    h4 {
-                        font-size: 25px;
-                        color: $accent1;
-                    }
-                    li {
-                        font-size: 20px;
-                        text-align: left;
-                    }
-                    ul {
-                        list-style-type: upper-roman
-                    }
                 }
             }
         }
