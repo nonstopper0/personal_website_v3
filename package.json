@@ -17,7 +17,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploygithub": "npm run build && gh-pages -d build",
-    "deploy": "npm run build && firebase deploy",
+    "deployfirebase": "npm run build && firebase deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
