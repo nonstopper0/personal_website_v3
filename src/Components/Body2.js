@@ -14,11 +14,37 @@ const Body2 = React.forwardRef((props, ref) => {
                     <ins className="graffiti">c</ins>
                     <p>
                     Currently located in <span>Denver, Colorado.</span>
-                    I am a <span>Full-stack developer</span> that loves every aspect of programming. 
-                    I use my development skills to create my own ideas and businesses while also taking time to learn something new and noteworthy every day. 
-                    When I'm not working on my next project or idea you can find me out at the race-track or in the mountains doing what I love.
+                    I am a <span>Full-stack developer</span>
                     </p>
                 </div>
+            </div>
+            <div className="home-page2-timeline">
+                <section className="home-page2-timeline-left">
+                    <div className="timeline-textbox">
+                            <div className="timeline-line-left"></div>
+                            <p>Started School at General Assembly for Software Engineering</p>
+                            <h6>November 2019</h6>
+                    </div>
+                    <div style={{height: '60px'}}></div>
+                    <div className="timeline-textbox">
+                            <div className="timeline-line-left"></div>
+                            <p>Started postion as Website Manager at PFTLeads </p>
+                            <h6>April 2020</h6>
+                    </div>
+                </section>
+                <section className="home-page2-timeline-middle">
+                    <div className="timeline-textbox">
+                        
+                    </div>
+                </section>
+                <section className="home-page2-timeline-right">
+                    <div style={{height: '60px'}}></div>
+                    <div className="timeline-textbox">
+                            <p>Graduated General Assembly</p>
+                            <h6>February 2020</h6>
+                            <div className="timeline-line-right"></div>
+                    </div>
+                </section>
             </div>
             <div className="home-page2-box2">
                 <div className="home-page2-box2-text">
