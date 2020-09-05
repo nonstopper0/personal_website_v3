@@ -1,8 +1,9 @@
 import React from 'react';
 import './Body2.scss'
 
-import Me from '../SCSS/images/me.jpg'
+import Me from '../SCSS/images/me.png'
 import Logos from '../SCSS/images/technologies.png'
+import {AiFillGithub, AiFillLinkedin} from 'react-icons/ai';
 
 const Body2 = React.forwardRef((props, ref) => {
     return (
@@ -13,12 +14,19 @@ const Body2 = React.forwardRef((props, ref) => {
                     <h2>About me</h2>
                     <ins className="graffiti">c</ins>
                     <p>
-                    Currently located in <span>Denver, Colorado.</span>
-                    I am a <span>Full-stack developer</span>
+                    Currently located in <span>Denver, Colorado</span>.
+                    I am a <span>Full-stack developer</span> currently working at PFTLeads as a Website Development Manager.
+                    I Graduated from <span>General Assembly</span> (A Software Engineering Bootcamp) in early 2020 and have pursued my passion ever since.
+                    Every day I focus on improving my skills, building my network, and hurting my posture.
+                    Whenever I'm not at my desk you can find me at the race-track or on top of a mountain.
                     </p>
+                    <div className="home-page2-box1-text-icons">
+                        <a href="https://github.com/nonstopper0"><AiFillGithub/></a>
+                        <a href="https://www.linkedin.com/in/nathaniel-redmon-68b74915b/"><AiFillLinkedin/></a>
+                    </div>
                 </div>
             </div>
-            <div className="home-page2-timeline">
+            {/* <div className="home-page2-timeline">
                 <section className="home-page2-timeline-left">
                     <div className="timeline-textbox">
                             <div className="timeline-line-left"></div>
@@ -45,7 +53,7 @@ const Body2 = React.forwardRef((props, ref) => {
                             <div className="timeline-line-right"></div>
                     </div>
                 </section>
-            </div>
+            </div> */}
             <div className="home-page2-box2">
                 <div className="home-page2-box2-text">
                     <h3>Technologies I use.</h3>

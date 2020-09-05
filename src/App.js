@@ -6,6 +6,7 @@ import Edge from './SCSS/images/edge.svg'
 import Loader from './Components/Loader.js'
 import Body1 from './Components/Body1.js'
 import Body2 from './Components/Body2.js'
+import Body3 from './Components/Body3.js'
 import Nav from './Components/Nav.js'
 import './App.scss';
 
@@ -17,7 +18,7 @@ class App extends React.Component {
             loading: true
         }
         this.aboutRef = React.createRef();
-        this.downloadRef = React.createRef();
+        this.portfolioRef = React.createRef();
         this.homeRef = React.createRef();
     }
 
@@ -125,8 +126,8 @@ class App extends React.Component {
         case 'contact': 
           window.scrollTo(0, this.contactRef.current.offsetTop)
           break;
-        case 'download':
-          window.scrollTo(0, this.downloadRef.current.offsetTop)
+        case 'portfolio':
+          window.scrollTo(0, this.portfolioRef.current.offsetTop)
           break;
         default: 
           break;
@@ -138,7 +139,6 @@ class App extends React.Component {
           <React.Fragment>
             { !this.state.loading ? 
             <div className="page-container">
-              <div className="blurBox"></div>
               <Nav scrollC={this.scrollController} graffiti={this.deGraffiti}/>
               <main className="home-container">
                 <img className="home-corner" id="one" alt="corner addition" src={Edge}/>
@@ -151,6 +151,7 @@ class App extends React.Component {
                 </div>
                 <Body1 ref={this.homeRef} />
                 <Body2 ref={this.aboutRef} />
+                <Body3 ref={this.portfolioRef} />
                 <div ref={this.downloadRef} style={{height: 1000, width: '100%'}}></div>
               </main>
               <footer className="app-footer">

@@ -27,10 +27,10 @@ function nav(props) {
                     <MdPerson />
                 </div>
             </button>
-            <button onClick={() => props.scrollC('download')}>
+            <button onClick={() => props.scrollC('portfolio')}>
                 <div>
-                    <p className="hidden">Download</p>
-                    <FaDownload />
+                    <p className="hidden">Portfolio</p>
+                    <GoPencil />
                 </div>
             </button>
             <button onClick={() => props.scrollC('contact')}>
