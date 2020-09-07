@@ -5,15 +5,15 @@ import './Body3.scss'
 const Body3 = React.forwardRef((props, ref) => {
     return (
         <section className="portfolio-container" ref={ref}>
-            <div className="portfolio-row">
+            <button className="portfolio-row" onClick={()=> props.open('#nomi')}>
                 <h3>NOMI</h3>
-            </div>
-            <div className="portfolio-row">
+            </button>
+            <button className="portfolio-row" onClick={()=> props.open('#invidstor')}>
                 <h3>Invidstor</h3>
-            </div>
-            <div className="portfolio-row">
-
-            </div>
+            </button>
+            <button className="portfolio-row" onClick={()=> props.open('#invidstor')}>
+                <h3>W</h3>
+            </button>
         </section>
     )
 })

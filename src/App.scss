@@ -33,11 +33,12 @@
 .blurBox {
     z-index: 10;
     position: absolute;
-    backdrop-filter: blur(5px);
-    opacity: 0;
+    backdrop-filter: blur(10px);
+    opacity: 1;
     width: 1000%;
     height: 1000%;
     background-color: none;
+    display: none;
     transition: 1s ease;
 }
 
@@ -208,6 +209,14 @@
         opacity: 0;
     } 51% {
         opacity: 1;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
     } 100% {
         opacity: 1;
     }

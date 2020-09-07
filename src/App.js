@@ -8,6 +8,7 @@ import Body1 from './Components/Body1.js'
 import Body2 from './Components/Body2.js'
 import Body3 from './Components/Body3.js'
 import Nav from './Components/Nav.js'
+import Portfolio from './Components/Portfolio';
 import './App.scss';
 
 class App extends React.Component {
@@ -115,6 +116,16 @@ class App extends React.Component {
         }
     }
 
+    openModal = (name) => {
+      document.querySelector(".blurBox").style.display = "block";
+      document.querySelector(name).style.display = "block";
+    }
+
+    closeModal = (name) => {
+      document.querySelector(".blurBox").style.display = "none";
+      document.querySelector(name).style.display = "none";
+    }
+
     scrollController = (refName) => {
       switch(refName) {
         case 'about':
@@ -139,6 +150,7 @@ class App extends React.Component {
           <React.Fragment>
             { !this.state.loading ? 
             <div className="page-container">
+              <div className="blurBox"></div>
               <Nav scrollC={this.scrollController} graffiti={this.deGraffiti}/>
               <main className="home-container">
                 <img className="home-corner" id="one" alt="corner addition" src={Edge}/>
@@ -149,9 +161,10 @@ class App extends React.Component {
                   <p className="graffiti" id="home-decoration1">i</p>
                   <img className="graffiti" id="can" alt="can" src={Can}/>
                 </div>
+                <Portfolio close={this.closeModal} />
                 <Body1 ref={this.homeRef} />
                 <Body2 ref={this.aboutRef} />
-                <Body3 ref={this.portfolioRef} />
+                <Body3 open={this.openModal} ref={this.portfolioRef} />
                 <div ref={this.downloadRef} style={{height: 1000, width: '100%'}}></div>
               </main>
               <footer className="app-footer">
