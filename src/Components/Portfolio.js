@@ -41,8 +41,8 @@ const Portfolio = (props) => {
                     <li>Firebase</li>
                     <li>Heroku</li>
                 </ul>
-                {/* <a href="https://play.google.com/store/apps/details?id=com.nathanielredmon.nomi"><img src={GooglePlay}/></a>
-                <a href="https://nomi-4acb8.web.app/"><img src={Chrome}/></a> */}
+                <a href="https://play.google.com/store/apps/details?id=com.nathanielredmon.nomi"><img src={GooglePlay}/></a>
+                <a href="https://nomi-4acb8.web.app/"><img src={Chrome}/></a>
 
             </div>
             <div className="modal" id="invidstor">
