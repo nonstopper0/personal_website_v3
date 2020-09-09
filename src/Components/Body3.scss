@@ -6,7 +6,13 @@
     min-width: 100px;
     flex-wrap: wrap;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
+    border: 1px solid rgba(53, 53, 53, 0.151);
+
+    @include mobile {
+        padding: 5px;
+        margin-top: 40px;
+    }
 
     .portfolio-row {
         display: flex;
@@ -17,8 +23,21 @@
         background-color: black;
         border: none;
 
+        @include mobile {
+            height: 150px;
+        }
+
         h3 {
             color: white;
         }
     }
+}
+
+#nomiButton {
+    background-color: transparent;
+    background-image: URL('../SCSS/images/nomi.png');
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
