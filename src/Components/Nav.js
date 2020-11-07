@@ -1,6 +1,6 @@
 import React from 'react';
 import './Nav.scss'
-import {FaHome, FaDownload} from 'react-icons/fa'
+import {FaHome} from 'react-icons/fa'
 import {MdPerson} from 'react-icons/md'
 import {GoPencil} from 'react-icons/go'
 import NavCan from '../SCSS/images/navcan.svg'

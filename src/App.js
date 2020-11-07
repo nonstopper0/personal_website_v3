@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Can from './SCSS/images/can.svg'
 import Edge from './SCSS/images/edge.svg'
 
 import Loader from './Components/Loader.js'

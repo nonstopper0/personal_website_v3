@@ -20,6 +20,7 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
+
     @include mobile {
         margin: 0px;
         width: 95%;
@@ -65,5 +66,6 @@
             max-height: 75px;
         }
     }
+
 }
 
