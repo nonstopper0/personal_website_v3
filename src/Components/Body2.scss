@@ -1,5 +1,6 @@
 @import '../SCSS/theme.scss';
 
+
 .home-page2-container {
     position: relative;
     display: flex;
@@ -8,23 +9,8 @@
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    
-    #arrow {
-        z-index: 1;
-        position: absolute;
-        width: 10%;
-        min-width: 120px;
-        bottom: 300px;
-        right: 5%;
-        transform: rotate(140deg) scaleY(-1);
+    overflow: hidden;
 
-        @include mobile {
-            opacity: .05;
-        }
-        @include tablet {
-            opacity: 0;
-        }
-    }
 
     .home-page2-box1 {
         opacity: 0;

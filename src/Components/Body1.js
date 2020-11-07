@@ -6,7 +6,7 @@ const Body1 = React.forwardRef((props, ref) => {
     return (
         <section ref={ref} className="home-page1-container">
             <RiMouseLine className="mouse"/>
-            <h1 id="big">NATHANIEL</h1>
+            <h1 id="big">SOFTWARE TECH DESIGN</h1>
             <div className="home-page1-body">
                 <ins className="graffiti">d</ins>
                 <div className="home-page1-div">

@@ -159,7 +159,7 @@ class App extends React.Component {
                 <img className="home-corner" id="four" alt="corner addition" src={Edge}/>
                 <div className="home-decorations">
                   <p className="graffiti" id="home-decoration1">i</p>
-                  <img className="graffiti" id="can" alt="can" src={Can}/>
+                  <div id="home-decorationBar"></div>
                 </div>
                 <Portfolio close={this.closeModal} />
                 <Body1 ref={this.homeRef} />

@@ -3,6 +3,7 @@ import './Body2.scss'
 
 import Me from '../SCSS/images/me.png'
 import Logos from '../SCSS/images/technologies.png'
+import Arrow from '../SCSS/images/arrow.svg'
 import {AiFillGithub, AiFillLinkedin} from 'react-icons/ai';
 
 const Body2 = React.forwardRef((props, ref) => {
