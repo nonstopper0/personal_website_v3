@@ -66,6 +66,7 @@ const Portfolio = (props) => {
                 <h2>Technologies Used</h2>
                 <ul>
                     <li>ReactJS</li>
+                    <li>React Native</li>
                     <li>ExpressJS</li>
                     <li>MongoDB</li>
                     <li>Stock market API</li>
@@ -81,6 +82,7 @@ const Portfolio = (props) => {
                 <header>
                     <h1>This is <span>Invidstor</span></h1>
                     <p>An application for investing in your favorite content.</p>
+                    <p>*Info coming soon*</p>
                 </header>
             </div>
             <div className="modal" id="invidstor">
