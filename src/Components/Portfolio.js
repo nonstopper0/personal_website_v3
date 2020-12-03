@@ -13,8 +13,8 @@ const Portfolio = (props) => {
                     <h1>This is <span>NOMI</span></h1>
                     <p>A stock market trading replication based on real-time daily data.</p>
                 </header>
-                <img className="right" src="https://i.gyazo.com/82277fad79c178c554ab397181797beb.png"/>
-                <img className="right" src="https://i.gyazo.com/7e280c54cebd7e76d1c3d593d803ce95.png"/>
+                <img className="right" alt="nomi application" src="https://i.gyazo.com/82277fad79c178c554ab397181797beb.png"/>
+                <img className="right" alt="nomi application" src="https://i.gyazo.com/7e280c54cebd7e76d1c3d593d803ce95.png"/>
                 <h2>Why I created NOMI?</h2>
                 <p>
                     &emsp;&ensp;Nomi was my capstone project for my time at General Assembly. The stock market has always been an extremely intriguing sector of programming for me.
@@ -66,6 +66,7 @@ const Portfolio = (props) => {
                 <h2>Technologies Used</h2>
                 <ul>
                     <li>ReactJS</li>
+                    <li>React Native</li>
                     <li>ExpressJS</li>
                     <li>MongoDB</li>
                     <li>Stock market API</li>
