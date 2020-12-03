@@ -10,7 +10,7 @@ const Body1 = React.forwardRef((props, ref) => {
             <div className="home-page1-body">
                 <ins className="graffiti">d</ins>
                 <div className="home-page1-div">
-                    <h1>Nathaniel Redmon</h1>
+                    <h1>NATHANIEL REDMON</h1>
                     <div id="line"></div>
                 </div>
                 <div className="home-page1-div2">

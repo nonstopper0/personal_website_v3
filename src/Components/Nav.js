@@ -8,7 +8,6 @@ import NavCan from '../SCSS/images/navcan.svg'
 function nav(props) {
     return (
         <nav>
-            <div id="navLine"></div>
             <button id="canBtn" onClick={() => props.graffiti()}>
                 <div id="canDiv">
                     <p className="hidden">Graffiti</p>
@@ -16,28 +15,16 @@ function nav(props) {
                 </div>
             </button>
             <button onClick={() => props.scrollC('home')}>
-                <div>
-                    <p className="hidden">Home</p>
                     <FaHome />
-                </div>
             </button>
             <button onClick={() => props.scrollC('about')}>
-                <div>
-                    <p className="hidden">About</p>
                     <MdPerson />
-                </div>
             </button>
             <button onClick={() => props.scrollC('portfolio')}>
-                <div>
-                    <p className="hidden">Portfolio</p>
                     <GoPencil />
-                </div>
             </button>
             <button onClick={() => props.scrollC('contact')}>
-                <div>
-                    <p className="hidden">Contact</p>
                     <GoPencil />
-                </div>
             </button>
         </nav>
     )

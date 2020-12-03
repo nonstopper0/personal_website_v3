@@ -1,7 +1,7 @@
 import React from 'react';
 import './Loader.scss'
 
-import Load from './Load.svg';
+import Load from '../SCSS/images/Load.svg';
 
 function Loader() {
     return (

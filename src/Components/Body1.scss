@@ -64,32 +64,23 @@
 
             h1 {
                 z-index: 2;
-                font-family: 'Sprite';
                 text-align: center;
-                font-size: 80px;
-                font-weight: 400;
+                font-size: 70px;
+                font-weight: 800;
                 color: $white;
-                margin: 0px;
-                animation: type1 2s steps(16, end);
+                margin: 0 auto;
                 overflow: hidden;
-                width: 16ch;
                 white-space: nowrap;
-                padding-right: 4px;
+                border-right: 3px solid white;
+                animation: 
+                    type 2s steps(16, end),
+                    blink-caret .75s step-end infinite;
+
     
                 @include mobile {
-                    font-size: 40px;
+                    font-size: 25px;
                 }
             } 
-            
-            #line {
-                height: 90px;
-                width: 1px;
-                background-color: white;
-
-                @include mobile {
-                    height: 40px;
-                }
-            }
         } 
 
         .home-page1-div2 {
@@ -97,32 +88,37 @@
             align-items: center;
 
             p {
-                opacity: 0;
                 font-weight: 300;
                 margin: 0px;
                 color: $light;
                 font-size: 28px;
                 text-align: center;
                 margin: 0px;
-                animation: type2 1.5s steps(20, end);
-                animation-delay: 1.9s;
                 overflow: hidden;
-                width: 16ch;
                 white-space: nowrap;
                 @include mobile {
                     font-size: 20px;
                 }
-            } #line2 {
-                opacity: 0;
-                height: 30px;
-                width: 1px;
-                background-color: white;
-
-                @include mobile {
-                    height: 20px;
-                } 
-            }
-            
+            }    
         }
+    }
+}
+
+@keyframes type {
+    from {
+        width: 0ch;
+    } to {
+        width: 100%;
+    }
+}
+
+
+@keyframes blink-caret {
+    from {
+        border-color: transparent
+    } 50% {
+        border-color: white;
+    } to {
+        border-color: transparent
     }
 }

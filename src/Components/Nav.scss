@@ -10,11 +10,19 @@ nav {
     opacity: 1;
     position: fixed;
     height: 100%;
-    width: 130px;
-    left: -65px;
-    transition: left .4s ease;
+    width: 60px;
+    left: 0px;
     background-color: $extremelydark;
     z-index: 15;
+    
+    @include mobile {
+        left: 0px;
+        height: 60px;
+        width: 100%;
+        bottom: 0px;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
     #canBtn {
         background-color: none;
@@ -38,31 +46,12 @@ nav {
         }
     }
 
-    #navLine {
-        position: absolute;
-        width: 1px;
-        height: 100vh;
-        background-color: $verydark;
-        left: 65px;
-
-        @include mobile {
-            display: none;
-        }
-    }
-
-    @include mobile {
-        left: 0px;
-        height: 60px;
-        width: 100%;
-        bottom: 0px;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
     button {
         background: none;
         border: none;
         transition: .2s ease;
+        margin: 2px;
+        
         svg {
             font-size: 28px;
             color: $accent1;
@@ -70,40 +59,6 @@ nav {
 
         &:focus {
             outline: none;
-        }
-
-        div {
-            width: 110px;
-            justify-content: flex-end; 
-            align-items: center;
-            margin-right: 14px;
-            display: flex;
-            transition: 1s ease;
-    
-            @include mobile {
-                width: fit-content;
-                justify-content: center;
-                margin-right: 0px;
-            }
-
-            &:hover {
-                transform: scale(0.9)
-            }
-    
-            .hidden {
-                text-align: right;
-                margin-right: 22px;
-                width: fit-content;
-                opacity: 1;
-                color: $light;
-                font-weight: 500;
-                font-size: 14px;
-        
-                @include mobile {
-                    display: none;
-                }
-                
-            }
         }
     }
 }

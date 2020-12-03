@@ -19,6 +19,7 @@
     animation: fadeIn 1s ease;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    line-height: 1.5em;
 
 
     @include mobile {

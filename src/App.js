@@ -24,38 +24,15 @@ class App extends React.Component {
 
     componentDidMount = async () => {
 
-        await this.setState({loading: false})
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            this.setState({loading: false})
+            resolve()
+          }, 1000)
+        }).then(() => {
+          window.addEventListener('scroll', this.onWindowScroll);
+        })
 
-        window.addEventListener('scroll', this.onWindowScroll);
-
-        if (window.screen.width > 500) {
-            let nav = document.querySelector('nav')
-            nav.addEventListener('mouseenter', () => {
-                nav.style.left = '0px'
-            })
-            nav.addEventListener('mouseleave', () => {
-                nav.style.left = '-65px'
-            })
-        }
-      
-      
-        //blur the window
-        // window.onblur = () => {
-        //     document.querySelector('.blurBox').style.opacity = '1'
-        // }
-        // window.onfocus = () => {
-        //     document.querySelector('.blurBox').style.opacity = '0'
-        // }
-      
-      
-        // mainText typing javascript
-        let typeText = document.querySelector('#line');
-        setTimeout(() => {
-            document.querySelector('#type').style.opacity = '1'
-            document.querySelector('#line2').style.opacity = '1'
-            typeText.classList.add('blinking')
-        }, 2000)
-        setTimeout(() => { document.querySelector('#line2').style.opacity = '0'}, 3000)
     }
 
     onWindowScroll = (e) => {
@@ -95,13 +72,6 @@ class App extends React.Component {
         this.setState({
             scrollHeight: scroll
         })
-    }
-
-    componentWillUnmount() {
-        let nav = document.querySelector('nav')
-        nav.removeEventListener('mouseover')
-        nav.removeEventListener('mouseleave')
-        window.removeEventListener('scroll')
     }
 
     deGraffiti() {

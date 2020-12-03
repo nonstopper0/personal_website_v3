@@ -130,23 +130,6 @@
     width: 100%;
 }
 
-@keyframes type1 {
-    from {
-        width: 0ch;
-    } to {
-        width: 16ch;
-    }
-}
-
-@keyframes type2 {
-    from {
-        opacity: 1;
-        width: 0ch;
-    } to {
-        opacity: 1;
-    }
-}
-
 @keyframes extras {
     from {
         width: 0px;
