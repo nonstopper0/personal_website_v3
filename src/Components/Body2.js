@@ -13,7 +13,7 @@ const Body2 = React.forwardRef((props, ref) => {
         <React.Fragment>
         <div className="page-triangle"></div>
         <section ref={ref}  className="home-page2-container">
-            
+
             <div className="home-page2-skills-container">
 
                 <div className="home-page2-skills-row">
@@ -33,7 +33,7 @@ const Body2 = React.forwardRef((props, ref) => {
                         <div className="home-page2-skills-row-item-circle">
                             <FaRegEye />
                         </div>  
-                        Test
+                        Visionary
                     </div>
                 </div>
 

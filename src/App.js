@@ -44,7 +44,6 @@ class App extends React.Component {
     }
 
     onWindowScroll = (e) => {
-        console.log(this.aboutRef.current.offsetTop)
         let windowHeight = window.innerHeight
         let scroll = window.pageYOffset
     
@@ -57,10 +56,22 @@ class App extends React.Component {
         // if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
         //     aboutMe.classList.add('fade-animation')
         // }
-        let skills = document.querySelector('.home-page2-box2') 
+        let skills = document.querySelector('.home-page2-box2-text') 
         if (skills.getBoundingClientRect().top - windowHeight/1.2 < 0) {
-            skills.classList.add('fade-animation')
-        }            
+          skills.children[0].style.animation = 'skill-fade-in-2 1s ease forwards'
+          skills.children[1].style.animation = 'skill-fade-in-3 1s ease forwards'
+        }      
+        
+        let skillsrow = document.querySelector('.home-page2-skills-row')
+        if (skillsrow.getBoundingClientRect().top - windowHeight/1.2 < 0) {
+          skillsrow.children[0].style.animation = ('skill-fade-in 1s ease forwards')
+          setTimeout(() => {
+            skillsrow.children[1].style.animation = ('skill-fade-in 1s ease forwards')
+          }, 300)
+          setTimeout(() => {
+            skillsrow.children[2].style.animation = ('skill-fade-in 1s ease forwards')
+          }, 600)
+        }
       
         // let leeway = 100
         // if (window.screen.width > 600) { 

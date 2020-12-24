@@ -11,7 +11,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     margin-left: 30px;
-    background-color: $extremelydark;
+    background-color: $verydark;
     color: $lighter;
     z-index: 100;
     visibility: hidden;
@@ -19,6 +19,7 @@
     -webkit-overflow-scrolling: touch;
     line-height: 1.5em;
     animation-fill-mode: forwards;
+    border: 5px solid $extremelydark;
 
 
     @include mobile {

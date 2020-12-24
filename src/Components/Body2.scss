@@ -16,6 +16,7 @@
     }
 
     .home-page2-skills-row {
+        visibility: hidden;
         margin: 15px auto 15px auto;
         display: flex;
         flex-wrap: wrap;
@@ -235,6 +236,7 @@
         height: fit-content;
         margin: 100px auto 0px auto;
         transition: 1s ease;
+        opacity: 1;
 
 
         @include mobile {
@@ -245,6 +247,7 @@
 
         #home-page2-box2-logos {
             width: 100%;
+            opacity: 0;
         }
 
 
@@ -258,6 +261,7 @@
             margin: 0px 20px 0px 20px;
 
             h3 {
+                opacity: 0;
                 z-index: 1;
                 color: $white;
                 font-size: 80px;
