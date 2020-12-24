@@ -56,6 +56,11 @@ class App extends React.Component {
         // if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
         //     aboutMe.classList.add('fade-animation')
         // }
+        let aboutMe = document.querySelector('.home-page2-box1') 
+        if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
+          aboutMe.style.animation = 'skill-fade-in 1s ease forwards'
+        }             
+
         let skills = document.querySelector('.home-page2-box2-text') 
         if (skills.getBoundingClientRect().top - windowHeight/1.2 < 0) {
           skills.children[0].style.animation = 'skill-fade-in-2 1s ease forwards'

@@ -21,18 +21,21 @@
     height: 0;
     border-left: 100vw solid transparent;
     border-bottom: 200px solid $extremelydark;
+    @include mobile { border-bottom: 50px solid $extremelydark}
 }
 .page-triangle2 {
     width: 0;
     height: 0;
     border-right: 100vw solid transparent;
     border-top: 200px solid $extremelydark;  
+    @include mobile { border-top: 50px solid $extremelydark}
 }
 .page-triangle3 {
     width: 0;
     height: 0;
     border-left: 100vw solid transparent;
     border-bottom: 200px solid $extremelydark; 
+    @include mobile { border-bottom: 50px solid $extremelydark}
 }
 
 .blurred {

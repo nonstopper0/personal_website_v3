@@ -16,7 +16,6 @@ const Body3 = React.forwardRef((props, ref) => {
                     <img src={NOMIMacbook2} />
                     <GiClick className="click-button"/>
                 </div>
-                <h3>NOMI</h3>
             </button>
             <button id="invidstorButton" className="portfolio-row" onClick={()=> props.open('#invidstor')}>
                 <div className="portfolio-cover">
@@ -24,7 +23,6 @@ const Body3 = React.forwardRef((props, ref) => {
                     <img src={InvidstorMacbook2}/>
                     <GiClick className="click-button"/>
                 </div>
-                <h3>Invidstor</h3>
             </button>
             {/* <button className="portfolio-row" onClick={()=> props.open('#invidstor')}>
                 <div className="portfolio-cover"/>

@@ -3,7 +3,7 @@ import './Body2.scss'
 
 import Me from '../SCSS/images/me.png'
 import Logos from '../SCSS/images/technologies.png'
-// import {AiFillGithub, AiFillLinkedin} from 'react-icons/ai';
+import {AiFillGithub, AiFillLinkedin} from 'react-icons/ai';
 import { GiPencilBrush, GiChart } from 'react-icons/gi'
 import { RiCodeSSlashLine } from 'react-icons/ri'
 import { FaRegEye } from 'react-icons/fa'
@@ -40,8 +40,9 @@ const Body2 = React.forwardRef((props, ref) => {
             </div>
 
             <div className="page-triangle2"></div>
+            <h1 className="home-page2-extra-text">TRAVEL ADVENTURE</h1>
 
-            {/* <div className="home-page2-box1">
+            <div className="home-page2-box1">
             
                 <div className="home-page2-box1-text">
                     <h2>About me</h2>
@@ -57,7 +58,7 @@ const Body2 = React.forwardRef((props, ref) => {
                         <a href="https://www.linkedin.com/in/nathaniel-redmon-68b74915b/"><AiFillLinkedin/></a>
                     </div>
                 </div>
-            </div> */}
+            </div>
             {/* <div className="home-page2-timeline">
                 <section className="home-page2-timeline-left">
                     <div className="timeline-textbox">
