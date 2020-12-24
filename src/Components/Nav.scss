@@ -24,28 +24,6 @@ nav {
         justify-content: space-evenly;
     }
 
-    #canBtn {
-        background-color: none;
-        color: white;
-        border: none;
-        outline: none;
-        @include mobile {
-            display: none;
-        }
-
-    }
-    #canDiv {
-        position: absolute;
-        bottom: 10px;
-        left: 55px;
-        width: 50px;
-
-
-        #canButton {
-            width: 20px;
-        }
-    }
-
     button {
         background: none;
         border: none;

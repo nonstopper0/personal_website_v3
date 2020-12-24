@@ -24,14 +24,22 @@ class App extends React.Component {
 
     componentDidMount = async () => {
 
-        new Promise((resolve, reject) => {
-          setTimeout(() => {
-            this.setState({loading: false})
-            resolve()
-          }, 1000)
-        }).then(() => {
-          window.addEventListener('scroll', this.onWindowScroll);
-        })
+        window.addEventListener('scroll', this.onWindowScroll);
+
+        // Portfolio section animations
+        let portfolioRows = document.getElementsByClassName("portfolio-row")
+        for (let i = 0; i < portfolioRows.length; i++) {
+          portfolioRows[i].addEventListener("mouseenter", () => {
+            portfolioRows[i].style.height = "400px";
+            portfolioRows[i].children[0].style.opacity = 1;
+            portfolioRows[i].children[0].style.animation = "portfolio-fade-start 1s ease"
+          })
+          portfolioRows[i].addEventListener("mouseleave", () => {
+            // Reset height to css defined height
+            portfolioRows[i].style.height = ""
+            portfolioRows[i].children[0].style.animation = "portfolio-fade-end 1s ease forwards"
+          })
+        }
 
     }
 
@@ -74,25 +82,17 @@ class App extends React.Component {
         })
     }
 
-    deGraffiti() {
-        let graffiti = document.querySelectorAll('.graffiti')
-        for (let i = 0; i < graffiti.length; i++) {
-            if (graffiti[i].style.display !== 'none') {
-                graffiti[i].style.display = 'none'
-            } else {
-                graffiti[i].style.display = 'block'
-            }
-        }
-    }
-
     openModal = (name) => {
+      // name is the id of modal you want to open 
       document.querySelector(".blurBox").style.display = "block";
       document.querySelector(name).style.display = "block";
+      document.querySelector(name).style.animation = "modal-open 1s ease forwards"
     }
 
     closeModal = (name) => {
+      // name is the id of modal you want to close 
       document.querySelector(".blurBox").style.display = "none";
-      document.querySelector(name).style.display = "none";
+      document.querySelector(name).style.animation = "modal-close 1s ease forwards"
     }
 
     scrollController = (refName) => {
@@ -117,32 +117,26 @@ class App extends React.Component {
     render() {
       return (
           <React.Fragment>
-            { !this.state.loading ? 
             <div className="page-container">
               <div className="blurBox"></div>
-              <Nav scrollC={this.scrollController} graffiti={this.deGraffiti}/>
+              <Nav scrollC={this.scrollController}/>
               <main className="home-container">
-                <img className="home-corner" id="one" alt="corner addition" src={Edge}/>
-                <img className="home-corner" id="two" alt="corner addition" src={Edge}/>
-                <img className="home-corner" id="three" alt="corner addition" src={Edge}/>
-                <img className="home-corner" id="four" alt="corner addition" src={Edge}/>
-                <div className="home-decorations">
-                  <p className="graffiti" id="home-decoration1">i</p>
-                  <div id="home-decorationBar"></div>
-                </div>
-                <Portfolio close={this.closeModal} />
-                <Body1 ref={this.homeRef} />
-                <Body2 ref={this.aboutRef} />
-                <Body3 open={this.openModal} ref={this.portfolioRef} />
-                <div ref={this.downloadRef} style={{height: 1000, width: '100%'}}></div>
+                  <img className="home-corner" id="one" alt="corner addition" src={Edge}/>
+                  <img className="home-corner" id="two" alt="corner addition" src={Edge}/>
+                  <img className="home-corner" id="three" alt="corner addition" src={Edge}/>
+                  <img className="home-corner" id="four" alt="corner addition" src={Edge}/>
+                  <div className="home-decorations">
+                  </div>
+                  <Portfolio close={this.closeModal} />
+                  <Body1 ref={this.homeRef} />
+                  <Body2 ref={this.aboutRef} />
+                  <Body3 open={this.openModal} ref={this.portfolioRef} />
+                  <div ref={this.downloadRef}></div>
               </main>
               <footer className="app-footer">
                 <p>&copy; Copyright 2020. Nathaniel Redmon</p>
               </footer>
             </div>
-            :
-            <Loader />
-            }
           </React.Fragment>
           )
     }

@@ -8,12 +8,6 @@ import NavCan from '../SCSS/images/navcan.svg'
 function nav(props) {
     return (
         <nav>
-            <button id="canBtn" onClick={() => props.graffiti()}>
-                <div id="canDiv">
-                    <p className="hidden">Graffiti</p>
-                    <img id="canButton" src={NavCan} alt="can" />
-                </div>
-            </button>
             <button onClick={() => props.scrollC('home')}>
                     <FaHome />
             </button>
