@@ -3,16 +3,48 @@ import './Body2.scss'
 
 import Me from '../SCSS/images/me.png'
 import Logos from '../SCSS/images/technologies.png'
-import {AiFillGithub, AiFillLinkedin} from 'react-icons/ai';
+// import {AiFillGithub, AiFillLinkedin} from 'react-icons/ai';
+import { GiPencilBrush, GiChart } from 'react-icons/gi'
+import { RiCodeSSlashLine } from 'react-icons/ri'
+import { FaRegEye } from 'react-icons/fa'
 
 const Body2 = React.forwardRef((props, ref) => {
     return (
+        <React.Fragment>
+        <div className="page-triangle"></div>
         <section ref={ref}  className="home-page2-container">
-            <div className="home-page2-box1">
-                <img src={Me} alt="Nathaniel Redmon" className="home-page2-box1-img"></img>
+            
+            <div className="home-page2-skills-container">
+
+                <div className="home-page2-skills-row">
+                    <div className="home-page2-skills-row-item">
+                        <div className="home-page2-skills-row-item-circle">
+                            <GiPencilBrush />
+                        </div>
+                        Designer
+                    </div>
+                    <div className="home-page2-skills-row-item">
+                        <div className="home-page2-skills-row-item-circle">
+                            <RiCodeSSlashLine />
+                        </div>                    
+                        Creator
+                    </div>
+                    <div className="home-page2-skills-row-item">
+                        <div className="home-page2-skills-row-item-circle">
+                            <FaRegEye />
+                        </div>  
+                        Test
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="page-triangle2"></div>
+
+            {/* <div className="home-page2-box1">
+            
                 <div className="home-page2-box1-text">
                     <h2>About me</h2>
-                    <ins className="graffiti">c</ins>
                     <p>
                     Currently located in <span>Denver, Colorado</span>.
                     I am a <span>Full-stack developer</span> currently working at PFTLeads as a Website Development Manager.
@@ -25,7 +57,7 @@ const Body2 = React.forwardRef((props, ref) => {
                         <a href="https://www.linkedin.com/in/nathaniel-redmon-68b74915b/"><AiFillLinkedin/></a>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* <div className="home-page2-timeline">
                 <section className="home-page2-timeline-left">
                     <div className="timeline-textbox">
@@ -61,6 +93,8 @@ const Body2 = React.forwardRef((props, ref) => {
                 </div>
             </div>
         </section>
+        <div className="page-triangle3"></div>
+        </React.Fragment>
     )
 })
 

@@ -8,7 +8,8 @@ import InvidstorMacbook2 from '../SCSS/images/invidstormacbook2.png'
 
 const Body3 = React.forwardRef((props, ref) => {
     return (
-        <section className="portfolio-container" ref={ref}>
+        <section className="home-body3-container">
+        <div className="portfolio-container" ref={ref}>
             <button id="nomiButton" className="portfolio-row" onClick={()=> props.open('#nomi')}>
                 <div className="portfolio-cover">
                     <img src={NOMIMacbook} />
@@ -29,6 +30,7 @@ const Body3 = React.forwardRef((props, ref) => {
                 <div className="portfolio-cover"/>
                 <h3>W</h3>
             </button> */}
+        </div>
         </section>
     )
 })

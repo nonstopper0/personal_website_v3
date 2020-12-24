@@ -30,7 +30,7 @@ class App extends React.Component {
         let portfolioRows = document.getElementsByClassName("portfolio-row")
         for (let i = 0; i < portfolioRows.length; i++) {
           portfolioRows[i].addEventListener("mouseenter", () => {
-            portfolioRows[i].style.height = "400px";
+            portfolioRows[i].style.height = "380px";
             portfolioRows[i].children[0].style.opacity = 1;
             portfolioRows[i].children[0].style.animation = "portfolio-fade-start 1s ease"
           })
@@ -53,10 +53,10 @@ class App extends React.Component {
   
     
         // Load in elements
-        let aboutMe = document.querySelector('.home-page2-box1')
-        if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
-            aboutMe.classList.add('fade-animation')
-        }
+        // let aboutMe = document.querySelector('.home-page2-box1')
+        // if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
+        //     aboutMe.classList.add('fade-animation')
+        // }
         let skills = document.querySelector('.home-page2-box2') 
         if (skills.getBoundingClientRect().top - windowHeight/1.2 < 0) {
             skills.classList.add('fade-animation')

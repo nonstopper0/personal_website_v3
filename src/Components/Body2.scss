@@ -11,95 +11,134 @@
     justify-content: center;
     overflow: hidden;
 
+    .home-page2-skills-container {
+        background-color: $extremelydark;
+    }
 
-    .home-page2-box1 {
-        opacity: 0;
+    .home-page2-skills-row {
+        margin: 15px auto 15px auto;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
         align-items: center;
-        justify-content: center;
-        width: fit-content;
-        height: fit-content;
-        margin: 100px auto 0px auto;
-        transition: 1s ease;
-        @include mobile {
-            min-width: 0px;
-            width: 95%;
-            margin: 0 auto;
-        }
+        max-width: 1000px;
+        color: white;
+        
 
-        .home-page2-box1-img {
-            z-index: 1;
-            width: 300px;
-            border-radius: 15px;
-            height: 300px;
-            border-radius: 100%;
-            object-fit: cover;
-            border: 3px solid $dark;
-            margin: 20px 30px;
 
-            @include mobile {
-                margin: 0 auto;
-                width: 250px;
-                height: 250px;
-            }
-        }
-
-        .home-page2-box1-text {
-            color: $lighter;
-            max-width: 700px;
-            min-width: 100px;
+        .home-page2-skills-row-item {
+            margin: 10px 30px 10px 30px; 
+            font-size: 30px;
+            font-weight: 600;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
-            align-items: flex-start;
 
-            @include mobile {
-                align-items: center;
-                margin-top: 30px;
-                text-align: center;
-            }
 
-            h2 {
-                color: $white;
-                font-size: 40px;
-                margin: 0px;
-                text-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
-            } ins {
-                font-family: 'Sprite Extras';
-                text-decoration: none;
-                color: $accent1;
-                font-size: 30px;
-                margin: 0px;
-            } p  {
-                text-shadow: 0px 10px 40px rgba(0, 0, 0, .8);
-                font-size: 17px;
-                line-height: 1.5em;
-                z-index: 3;
-                span {
-                    color: $accent2;
-                    font-weight: 600;
-                }
-            }
-
-            .home-page2-box1-text-icons {
+            .home-page2-skills-row-item-circle {
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: center;
+                align-items: center;
                 color: white;
-                margin-top: 10px;
-                a {
-                    text-decoration: none;
-                    color: $accent1;
-                    font-size: 50px;
-                    margin-right: 10px;
-
-                    @include mobile {
-                        margin: 0px 10px 0px 20px;
-                    }
-                }
+                font-size: 120px;
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
             }
         }
     }
+
+    // .home-page2-box1 {
+    //     opacity: 0;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     align-items: center;
+    //     justify-content: center;
+    //     width: fit-content;
+    //     height: fit-content;
+    //     margin: 0px auto 20px auto;
+    //     transition: 1s ease;
+    //     @include mobile {
+    //         min-width: 0px;
+    //         width: 95%;
+    //         margin: 0 auto;
+    //     }
+
+    //     .home-page2-box1-img {
+    //         z-index: 1;
+    //         width: 300px;
+    //         border-radius: 15px;
+    //         height: 300px;
+    //         border-radius: 100%;
+    //         object-fit: cover;
+    //         border: 3px solid $dark;
+    //         margin: 20px 30px;
+    //         filter: brightness(0.9) constrast(110%);
+
+    //         @include mobile {
+    //             margin: 0 auto;
+    //             width: 250px;
+    //             height: 250px;
+    //         }
+    //     }
+
+    //     .home-page2-box1-text {
+    //         color: $lighter;
+    //         max-width: 800px;
+    //         min-width: 100px;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //         align-items: center;
+
+    //         @include mobile {
+    //             align-items: center;
+    //             margin-top: 30px;
+    //             text-align: center;
+    //         }
+
+    //         h2 {
+    //             color: $white;
+    //             font-size: 40px;
+    //             margin: 0px;
+    //             text-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+    //         } ins {
+    //             font-family: 'Sprite Extras';
+    //             text-decoration: none;
+    //             color: $accent1;
+    //             font-size: 30px;
+    //             margin: 20px 0px 0px 0px;
+    //             line-height: 0px;
+    //         } p  {
+    //             text-shadow: 0px 10px 40px rgba(0, 0, 0, .8);
+    //             font-size: 17px;
+    //             line-height: 1.5em;
+    //             z-index: 3;
+    //             span {
+    //                 color: $accent2;
+    //                 font-weight: 700;
+    //             }
+    //         }
+
+    //         .home-page2-box1-text-icons {
+    //             display: flex;
+    //             justify-content: space-evenly;
+    //             color: white;
+    //             margin-top: 10px;
+    //             a {
+    //                 text-decoration: none;
+    //                 color: $accent1;
+    //                 font-size: 50px;
+    //                 margin-right: 10px;
+
+    //                 @include mobile {
+    //                     margin: 0px 10px 0px 20px;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
 
     // .home-page2-timeline {
@@ -187,7 +226,6 @@
 
 
     .home-page2-box2 {
-        opacity: 0;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -195,7 +233,7 @@
         max-width: 1100px;
         min-width: 100px;
         height: fit-content;
-        margin: 100px auto 100px auto;
+        margin: 100px auto 0px auto;
         transition: 1s ease;
 
 
@@ -211,12 +249,13 @@
 
 
         .home-page2-box2-text {
-            position: relative;
             color: $light;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            margin: 0px 20px 0px 20px;
 
             h3 {
                 z-index: 1;
