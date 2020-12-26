@@ -13,15 +13,15 @@ const Body3 = React.forwardRef((props, ref) => {
             <h3>My Work</h3>
             <button id="nomiButton" className="portfolio-row" onClick={()=> props.open('#nomi')}>
                 <div className="portfolio-cover">
-                    <img src={NOMIMacbook} />
-                    <img src={NOMIMacbook2} />
+                    <img alt="nomi on macbook" src={NOMIMacbook} />
+                    <img alt="nomi on macbook" src={NOMIMacbook2} />
                     <GiClick className="click-button"/>
                 </div>
             </button>
             <button id="invidstorButton" className="portfolio-row" onClick={()=> props.open('#invidstor')}>
                 <div className="portfolio-cover">
-                    <img src={InvidstorMacbook}/>
-                    <img src={InvidstorMacbook2}/>
+                    <img alt="invidstor on screen" src={InvidstorMacbook}/>
+                    <img alt="invidstor on screen" src={InvidstorMacbook2}/>
                     <GiClick className="click-button"/>
                 </div>
             </button>

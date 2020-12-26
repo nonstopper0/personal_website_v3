@@ -1,14 +1,11 @@
 import React from 'react';
-
-import Edge from './SCSS/images/edge.svg'
-
-import Loader from './Components/Loader.js'
 import Body1 from './Components/Body1.js'
 import Body2 from './Components/Body2.js'
 import Body3 from './Components/Body3.js'
 import Nav from './Components/Nav.js'
 import Portfolio from './Components/Portfolio';
 import './App.scss';
+import Edge from './SCSS/images/edge.svg'
 
 class App extends React.Component {
     constructor() {
@@ -30,7 +27,6 @@ class App extends React.Component {
         let portfolioRows = document.getElementsByClassName("portfolio-row")
         for (let i = 0; i < portfolioRows.length; i++) {
           portfolioRows[i].addEventListener("mouseenter", () => {
-            portfolioRows[i].style.height = "380px";
             portfolioRows[i].children[0].style.opacity = 1;
             portfolioRows[i].children[0].style.animation = "portfolio-fade-start 1s ease"
           })
@@ -46,19 +42,17 @@ class App extends React.Component {
         let nav = document.querySelector('nav')
         let navRight = document.querySelector('.nav-right')
         nav.addEventListener("mouseenter", () => {
-          console.log('mouse entered nav');
-          navRight.style.left = "70px"
+          navRight.style.left = "70px";
           setTimeout(() => {
             for (let i = 0; i < navRight.children.length; i++) {
-              navRight.children[i].style.animation = "nav-fade-in 1s ease forwards"
+              navRight.children[i].style.animation = "nav-fade-in 1s ease-out forwards"
             }
           }, 500)
         })
         nav.addEventListener("mouseleave", () => {
           for (let i = 0; i < navRight.children.length; i++) {
             navRight.children[i].style.opacity = "0";
-            navRight.children[i].style.animation = "";
-            navRight.children[i].style.animation = "nav-fade-out .5s ease"
+            navRight.children[i].style.animation = "nav-fade-out .5s ease-out"
           }
           setTimeout(() => {
             navRight.style.left = ""
@@ -178,6 +172,7 @@ class App extends React.Component {
               </main>
               <footer className="app-footer">
                 <p>&copy; Copyright 2020. Nathaniel Redmon</p>
+                <p>This website is still in active development.</p>
               </footer>
             </div>
           </React.Fragment>

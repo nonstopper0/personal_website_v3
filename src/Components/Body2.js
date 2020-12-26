@@ -1,10 +1,8 @@
 import React from 'react';
 import './Body2.scss'
-
-import Me from '../SCSS/images/me.png'
 import Logos from '../SCSS/images/technologies.png'
 import {AiFillGithub, AiFillLinkedin} from 'react-icons/ai';
-import { GiPencilBrush, GiChart } from 'react-icons/gi'
+import { GiPencilBrush } from 'react-icons/gi'
 import { RiCodeSSlashLine } from 'react-icons/ri'
 import { FaRegEye } from 'react-icons/fa'
 
@@ -47,11 +45,10 @@ const Body2 = React.forwardRef((props, ref) => {
                 <div className="home-page2-box1-text">
                     <h2>About me</h2>
                     <p>
-                    Currently located in <span>Denver, Colorado</span>.
-                    I am a <span>Full-stack developer</span> working at PFTLeads as a Website Development Manager.
+                    I am a <span>Full-stack developer located in Denver, Colorado,</span> currently working at PFTLeads as a Website Development Lead.
                     I Graduated from <span>General Assembly</span> (A Software Engineering Bootcamp) in early 2020 and have pursued my passion ever since.
-                    Every day I focus on improving my skills, building my network, and hurting my posture.
-                    Whenever I'm not at my desk you can find me at the race-track or on top of a mountain.
+                    Every day I focus on <span>improving my skills, building my network, and hurting my posture</span>. 
+                    Whenever I am not at my desk you can find me at the race-track or on top of a mountain. 
                     </p>
                     <div className="home-page2-box1-text-icons">
                         <a href="https://github.com/nonstopper0"><AiFillGithub/></a>
