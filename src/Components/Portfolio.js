@@ -84,6 +84,11 @@ const Portfolio = (props) => {
                     <h1>This is <span>Invidstor</span></h1>
                     <p>An application for investing in your favorite content.</p>
                 </header>
+                <br></br>
+                <h2>This Project is still in development</h2>
+                <p>
+                    It is hosted in early alpha form at <a href="https://invidstor.com">Invidstor.com</a> if you would like to see current progress
+                </p>
             </div>
             <div className="modal" id="invidstor">
                 <button onClick={() => props.close('#invidstor')}>X</button>

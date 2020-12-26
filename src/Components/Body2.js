@@ -48,7 +48,7 @@ const Body2 = React.forwardRef((props, ref) => {
                     <h2>About me</h2>
                     <p>
                     Currently located in <span>Denver, Colorado</span>.
-                    I am a <span>Full-stack developer</span> currently working at PFTLeads as a Website Development Manager.
+                    I am a <span>Full-stack developer</span> working at PFTLeads as a Website Development Manager.
                     I Graduated from <span>General Assembly</span> (A Software Engineering Bootcamp) in early 2020 and have pursued my passion ever since.
                     Every day I focus on improving my skills, building my network, and hurting my posture.
                     Whenever I'm not at my desk you can find me at the race-track or on top of a mountain.
