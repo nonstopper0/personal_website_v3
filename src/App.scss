@@ -45,6 +45,9 @@
 .blinking {
     animation: blink 1s infinite;
 }
+.hidden {
+    opacity: 0;
+}
 .fade-animation {
     animation: zoom 2s ease;
     opacity: 1 !important;
@@ -241,5 +244,23 @@
         transform: translate(50px, 50px)
     } to {
         opacity: 1;
+    }
+}
+
+@keyframes nav-fade-in {
+    from {
+        opacity: 0;
+        transform: translate(0px, 12px);
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes nav-fade-out {
+    from {
+        opacity: 1;
+    } to {
+        transform: translate(0px, -12px);
+        opacity: 0;
     }
 }

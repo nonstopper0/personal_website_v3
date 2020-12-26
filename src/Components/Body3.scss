@@ -30,6 +30,12 @@
         right: 50%;
         top: -140px;
         transform: translate(50%);
+        white-space: nowrap;
+
+        @include mobile {
+            top: -100px;
+            font-size: 25px;
+        }
     }
 
     .portfolio-row {
@@ -43,8 +49,13 @@
         border: none;
         transition: height .7s ease;
 
+
+    &:hover {
+        cursor: pointer;
+    }
+
         @include mobile {
-            height: 150px;
+            height: 200px;
         }
 
         .portfolio-cover {

@@ -12,7 +12,7 @@ const Body2 = React.forwardRef((props, ref) => {
     return (
         <React.Fragment>
         <div className="page-triangle"></div>
-        <section ref={ref}  className="home-page2-container">
+        <section className="home-page2-container">
 
             <div className="home-page2-skills-container">
 
@@ -87,7 +87,7 @@ const Body2 = React.forwardRef((props, ref) => {
                     </div>
                 </section>
             </div> */}
-            <div className="home-page2-box2">
+            <div ref={ref} className="home-page2-box2">
                 <div className="home-page2-box2-text">
                     <h3>Technologies I use</h3>
                     <img id="home-page2-box2-logos" alt="technology logos" src={Logos}/>

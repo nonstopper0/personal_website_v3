@@ -42,41 +42,67 @@ class App extends React.Component {
         }
 
 
+        // navigations text fade in and out animation triggers
         let nav = document.querySelector('nav')
+        let navRight = document.querySelector('.nav-right')
+        nav.addEventListener("mouseenter", () => {
+          console.log('mouse entered nav');
+          navRight.style.left = "70px"
+          setTimeout(() => {
+            for (let i = 0; i < navRight.children.length; i++) {
+              navRight.children[i].style.animation = "nav-fade-in 1s ease forwards"
+            }
+          }, 500)
+        })
+        nav.addEventListener("mouseleave", () => {
+          for (let i = 0; i < navRight.children.length; i++) {
+            navRight.children[i].style.opacity = "0";
+            navRight.children[i].style.animation = "";
+            navRight.children[i].style.animation = "nav-fade-out .5s ease"
+          }
+          setTimeout(() => {
+            navRight.style.left = ""
+          }, 500)
+        })
 
     }
 
     onWindowScroll = (e) => {
         let windowHeight = window.innerHeight
         let scroll = window.pageYOffset
-  
-  
     
-        // Load in elements
-        // let aboutMe = document.querySelector('.home-page2-box1')
-        // if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
-        //     aboutMe.classList.add('fade-animation')
-        // }
-        let aboutMe = document.querySelector('.home-page2-box1') 
-        if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
-          aboutMe.style.animation = 'skill-fade-in 1s ease forwards'
-        }             
+        // Load in elements based off of screen height
+        let skillsrow = document.querySelector('.home-page2-skills-row')
+        if (skillsrow) {
+          if (skillsrow.getBoundingClientRect().top - windowHeight/1.2 < 0) {
+            skillsrow.children[0].style.animation = ('skill-fade-in 1s ease forwards')
+            setTimeout(() => {
+              skillsrow.children[1].style.animation = ('skill-fade-in 1s ease forwards')
+            }, 500)
+            setTimeout(() => {
+              skillsrow.children[2].style.animation = ('skill-fade-in 1s ease forwards')
+              skillsrow = null
+              document.querySelector('.mouse').style.opacity = "0";
+            }, 1000)
+          }
+        }
 
         let skills = document.querySelector('.home-page2-box2-text') 
-        if (skills.getBoundingClientRect().top - windowHeight/1.2 < 0) {
-          skills.children[0].style.animation = 'skill-fade-in-2 1s ease forwards'
-          skills.children[1].style.animation = 'skill-fade-in-3 1s ease forwards'
-        }      
-        
-        let skillsrow = document.querySelector('.home-page2-skills-row')
-        if (skillsrow.getBoundingClientRect().top - windowHeight/1.2 < 0) {
-          skillsrow.children[0].style.animation = ('skill-fade-in 1s ease forwards')
-          setTimeout(() => {
-            skillsrow.children[1].style.animation = ('skill-fade-in 1s ease forwards')
-          }, 300)
-          setTimeout(() => {
-            skillsrow.children[2].style.animation = ('skill-fade-in 1s ease forwards')
-          }, 600)
+        if (skills) {
+          if (skills.getBoundingClientRect().top - windowHeight/1.2 < 0) {
+            skills.children[0].style.animation = 'skill-fade-in-2 1s ease forwards'
+            skills.children[1].style.animation = 'skill-fade-in-3 1s ease forwards'
+            skills = null
+          }      
+        }
+
+        let aboutMe = document.querySelector('.home-page2-box1') 
+        if (aboutMe) {
+          if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
+            aboutMe.style.animation = 'skill-fade-in 1s ease forwards'
+            aboutMe = null;
+            
+          }             
         }
       
         // let leeway = 100
