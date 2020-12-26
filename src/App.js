@@ -41,14 +41,15 @@ class App extends React.Component {
           })
         }
 
+
+        let nav = document.querySelector('nav')
+
     }
 
     onWindowScroll = (e) => {
         let windowHeight = window.innerHeight
         let scroll = window.pageYOffset
-    
-        document.querySelector('.mouse').style.animation = "normal"
-        document.querySelector('.mouse').style.opacity = "0"
+  
   
     
         // Load in elements

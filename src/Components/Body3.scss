@@ -3,9 +3,11 @@
 .home-body3-container {
     padding-top: 100px;
     background-color: $extremelydark;
+    position: relative;
 }
 
 .portfolio-container {
+    position: relative;
     height: fit-content;
     max-width: 1200px;
     min-width: 100px;
@@ -14,8 +16,20 @@
     padding: 30px;
     border: 1px solid rgba(53, 53, 53, 0.151);
 
+    
     @include mobile {
         padding: 5px;
+    }
+
+    h3 {
+        border: 1px solid rgba(53, 53, 53, 0.151);
+        padding: 10px 40px 10px 40px;
+        font-size: 40px;
+        color: $white;
+        position: absolute;
+        right: 50%;
+        top: -140px;
+        transform: translate(50%);
     }
 
     .portfolio-row {
@@ -44,7 +58,7 @@
 
             img {
                 height: 310px;
-                margin: 40px 15px 0px 15px;
+                margin: 30px 50px 10px 50px;
             }
 
             svg {
@@ -66,6 +80,7 @@
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
     background-position: center;
+    background-position-y: 40%;
     background-size: cover;
 }
 
@@ -75,24 +90,25 @@
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
     background-position: center;
+    background-position-y: 58%;
     background-size: cover;
 }
 
 @keyframes portfolio-fade-start {
     from {
-        clip-path: circle(200% at -200% 50%)
+        clip-path: circle(20% at -20% 0%)
 
     } to {
-        clip-path: circle(200% at 50% 50%)
+        clip-path: circle(110% at 50% 50%)
     }
 }
 
 @keyframes portfolio-fade-end {
     from {
-        clip-path: circle(200% at 50% 50%)
+        clip-path: circle(110% at 50% 50%)
 
     } to {
-        clip-path: circle(200% at 300% 50%)
+        clip-path: circle(20% at 120% 110%)
     }
 }  
 

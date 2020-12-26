@@ -20,6 +20,7 @@ function nav(props) {
             <button onClick={() => props.scrollC('contact')}>
                     <GoPencil />
             </button>
+            <div className="nav-background"></div>
         </nav>
     )
 }

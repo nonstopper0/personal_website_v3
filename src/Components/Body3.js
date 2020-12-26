@@ -10,6 +10,7 @@ const Body3 = React.forwardRef((props, ref) => {
     return (
         <section className="home-body3-container">
         <div className="portfolio-container" ref={ref}>
+            <h3>My Work</h3>
             <button id="nomiButton" className="portfolio-row" onClick={()=> props.open('#nomi')}>
                 <div className="portfolio-cover">
                     <img src={NOMIMacbook} />
