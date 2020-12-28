@@ -1,0 +1,53 @@
+@import '../SCSS/theme.scss';
+
+.contact-container {
+    position: relative;
+
+
+    .contact-body-container {
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+        width: fit-content;
+        margin: 200px auto;
+
+        @include mobile {
+            margin: 50px auto;
+        }
+
+        h4 {
+            border: 1px solid rgba(53, 53, 53, 0.151);
+            padding: 10px 30px 10px 40px;
+            font-size: 40px;
+            color: $white;
+            width: 300px;
+            margin: 30px auto;
+            white-space: nowrap;
+            opacity: 0;
+
+            @include mobile {
+                font-size: 25px;
+                width: 190px;
+            }
+        }
+
+
+        .contact-body-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            justify-content: center;
+
+            a {
+                opacity: 0;
+            }
+
+            svg {
+                font-size: 100px;
+                color: $accent1;
+                margin: 30px;
+            }
+        }
+        }
+}
+

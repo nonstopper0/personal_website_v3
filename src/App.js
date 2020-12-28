@@ -1,9 +1,12 @@
 import React from 'react';
+
 import Body1 from './Components/Body1.js'
 import Body2 from './Components/Body2.js'
 import Body3 from './Components/Body3.js'
+import Body4 from './Components/Body4.js'
 import Nav from './Components/Nav.js'
-import Portfolio from './Components/Portfolio';
+import Portfolio from './Components/Portfolio.js';
+
 import './App.scss';
 import Edge from './SCSS/images/edge.svg'
 
@@ -12,11 +15,16 @@ class App extends React.Component {
         super()
         this.state = {
             scrollHeight: 0,
-            loading: true
+            loading: true,
+            skillsrow: true,
+            skills: true,
+            aboutMe: true,
+            contactMe: true
         }
         this.aboutRef = React.createRef();
         this.portfolioRef = React.createRef();
         this.homeRef = React.createRef();
+        this.contactRef = React.createRef();
     }
 
     componentDidMount = async () => {
@@ -45,7 +53,7 @@ class App extends React.Component {
           navRight.style.left = "70px";
           setTimeout(() => {
             for (let i = 0; i < navRight.children.length; i++) {
-              navRight.children[i].style.animation = "nav-fade-in 1s ease-out forwards"
+              navRight.children[i].style.animation = "nav-fade-in .5s ease-out forwards"
             }
           }, 500)
         })
@@ -66,35 +74,67 @@ class App extends React.Component {
         let scroll = window.pageYOffset
     
         // Load in elements based off of screen height
-        let skillsrow = document.querySelector('.home-page2-skills-row')
-        if (skillsrow) {
+        if (this.state.skillsrow) {
+          let skillsrow = document.querySelector('.home-page2-skills-row')
           if (skillsrow.getBoundingClientRect().top - windowHeight/1.2 < 0) {
             skillsrow.children[0].style.animation = ('skill-fade-in 1s ease forwards')
+            document.querySelector('.mouse').style.opacity = "0";
             setTimeout(() => {
               skillsrow.children[1].style.animation = ('skill-fade-in 1s ease forwards')
             }, 500)
             setTimeout(() => {
               skillsrow.children[2].style.animation = ('skill-fade-in 1s ease forwards')
-              skillsrow = null
-              document.querySelector('.mouse').style.opacity = "0";
+              this.setState({
+                skillsrow: false
+              })
             }, 1000)
           }
         }
 
-        let skills = document.querySelector('.home-page2-box2-text') 
-        if (skills) {
+        if (this.state.skills) {
+          let skills = document.querySelector('.home-page2-box2-text') 
           if (skills.getBoundingClientRect().top - windowHeight/1.2 < 0) {
             skills.children[0].style.animation = 'skill-fade-in-2 1s ease forwards'
             skills.children[1].style.animation = 'skill-fade-in-3 1s ease forwards'
-            skills = null
+            this.setState({
+              skills: false
+            })
           }      
         }
 
-        let aboutMe = document.querySelector('.home-page2-box1') 
-        if (aboutMe) {
+        if (this.state.aboutMe) {
+          let aboutMe = document.querySelector('.home-page2-box1') 
           if (aboutMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
             aboutMe.style.animation = 'skill-fade-in 1s ease forwards'
-            aboutMe = null;
+            this.setState({
+              aboutMe: false
+            })
+            
+          }             
+        }
+
+        if (this.state.contactMe) {
+          let contactMe = document.querySelector('.contact-body-container').children[0]
+          let icons = document.querySelector('.contact-body-icons')
+          if (contactMe.getBoundingClientRect().top - windowHeight/1.2 < 0) {
+            contactMe.style.animation = 'skill-fade-in 1s ease forwards'
+            icons.children[3].style.animation = ('skill-fade-in 1s ease forwards')
+            document.querySelector('.mouse').style.opacity = "0";
+            setTimeout(() => {
+              icons.children[2].style.animation = ('skill-fade-in 1s ease forwards')
+            }, 200)
+            setTimeout(() => {
+              icons.children[1].style.animation = ('skill-fade-in 1s ease forwards')
+              this.setState({
+                contactMe: false
+              })
+            }, 400)
+            setTimeout(() => {
+              icons.children[0].style.animation = ('skill-fade-in 1s ease forwards')
+              this.setState({
+                contactMe: false
+              })
+            }, 600)
             
           }             
         }
@@ -168,6 +208,7 @@ class App extends React.Component {
                   <Body1 ref={this.homeRef} />
                   <Body2 ref={this.aboutRef} />
                   <Body3 open={this.openModal} ref={this.portfolioRef} />
+                  <Body4 ref={this.contactRef} />
                   <div ref={this.downloadRef}></div>
               </main>
               <footer className="app-footer">

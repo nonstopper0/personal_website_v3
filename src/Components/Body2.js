@@ -87,7 +87,7 @@ const Body2 = React.forwardRef((props, ref) => {
             <div ref={ref} className="home-page2-box2">
                 <div className="home-page2-box2-text">
                     <h3>Technologies I use</h3>
-                    <img id="home-page2-box2-logos" alt="technology logos" src={Logos}/>
+                    <img  id="home-page2-box2-logos" alt="technology logos" src={Logos}/>
                 </div>
             </div>
         </section>

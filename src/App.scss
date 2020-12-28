@@ -38,6 +38,13 @@
     border-bottom: 200px solid $extremelydark; 
     @include mobile { border-bottom: 50px solid $extremelydark}
 }
+.page-triangle4 {
+    width: 0;
+    height: 0;
+    border-right: 100vw solid transparent;
+    border-top: 200px solid $extremelydark; 
+    @include mobile { border-top: 50px solid $extremelydark}
+}
 
 .blurred {
     filter: blur(10px) !important;
@@ -251,7 +258,7 @@
 @keyframes nav-fade-in {
     from {
         opacity: 0;
-        transform: translate(0px, 12px);
+        transform: translate(0px, 10px);
     } to {
         opacity: 1;
     }
