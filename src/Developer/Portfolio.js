@@ -85,9 +85,19 @@ const Portfolio = (props) => {
                     <p>An application for investing in your favorite content.</p>
                 </header>
                 <br></br>
+                <h2>Bringing Investing and Content together</h2>
+                <p>
+                    Invidstor is an application aimed towards the young people who want to invest, but are scared by the towering building and greed of wall street.
+                    Todays generation spend most of their time consuming content online. 
+                    The biggest contributor to that content consumption is Youtube. 
+                    There are over 5 Billion* videos watched on Youtube every single day.
+                    Invidstor taps into this consumption and combines the content consumer with the eager investor.
+                </p>
                 <h2>This Project is still in development</h2>
                 <p>
-                    It is hosted in early alpha form at <a href="https://invidstor.com">Invidstor.com</a> if you would like to see current progress
+                    I am currently developing this project but the algorithms, basic layout, user system, and databasing have been created. 
+                    It is hosted in early alpha form at <a href="https://invidstor.com">Invidstor.com</a> if you would like to see current progress.
+                    If the development website seems to not be communicating with the back-end it means it is currently undergoing productional maintenance. 
                 </p>
             </div>
             <div className="modal" id="invidstor">

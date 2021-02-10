@@ -256,10 +256,11 @@
 }
 
 @keyframes nav-fade-in {
-    from {
+    0% {
         opacity: 0;
-        transform: translate(0px, 10px);
-    } to {
+    } 60% {
+        opacity: 0
+    } 100% {
         opacity: 1;
     }
 }
@@ -267,8 +268,7 @@
 @keyframes nav-fade-out {
     from {
         opacity: 1;
-    } to {
-        transform: translate(0px, -12px);
+    } 70% {
         opacity: 0;
     }
 }
