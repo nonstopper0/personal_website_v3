@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function Photographer() {
+export default function Photographer() {
     const [test, setTest] = useState(false);
 
     useEffect(() => {
@@ -11,3 +11,4 @@ function Photographer() {
         <div></div>
     )
 }
+
