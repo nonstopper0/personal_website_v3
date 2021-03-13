@@ -78,6 +78,9 @@ const Portfolio = (props) => {
                 <a href="https://nomi-4acb8.web.app/"><img alt="chrome browser logo" src={Chrome}/></a>
 
             </div>
+
+
+
             <div className="modal" id="invidstor">
                 <button onClick={() => props.close('#invidstor')}>X</button>
                 <header>
@@ -86,6 +89,30 @@ const Portfolio = (props) => {
                 </header>
                 <br></br>
                 <h2>Bringing Investing and Content together</h2>
+                <p>
+                    &emsp;&ensp;Invidstor is an application aimed towards the young people who want to invest, but are scared off by the towering buildings and masssive greed of wall street.
+                    Todays generation spend most of their time consuming content online. 
+                    The biggest contributor to that content consumption is Youtube. 
+                    There are over 5 Billion* videos watched on Youtube every single day and Invidstor taps into this consumption and combines the content consumer with the eager investor.
+                </p>
+                <h2>This Project is still in development</h2>
+                <p>
+                    &emsp;&ensp;I am currently developing this project but the algorithms, basic layout, user system, and databasing have been created. 
+                    It is hosted in early alpha form at <a href="https://invidstor.com">Invidstor.com</a> if you would like to see current progress.
+                    If the development website seems to not be communicating with the back-end it means it is currently undergoing productional maintenance. 
+                </p>
+            </div>
+
+
+
+            <div className="modal" id="reactpixel">
+                <button onClick={() => props.close('#reactpixel')}>X</button>
+                <header>
+                    <h1>This is <span>React Pixel</span></h1>
+                    <p>An application for creating pixel art online.</p>
+                </header>
+                <br></br>
+                <h2>Creating Pixel Art on the web</h2>
                 <p>
                     &emsp;&ensp;Invidstor is an application aimed towards the young people who want to invest, but are scared off by the towering buildings and masssive greed of wall street.
                     Todays generation spend most of their time consuming content online. 
