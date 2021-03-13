@@ -109,25 +109,52 @@ const Portfolio = (props) => {
                 <button onClick={() => props.close('#reactpixel')}>X</button>
                 <header>
                     <h1>This is <span>React Pixel</span></h1>
-                    <p>An application for creating pixel art online.</p>
+                    <p>An application for creating pixel art online and with friends.</p>
                 </header>
                 <br></br>
-                <h2>Creating Pixel Art on the web</h2>
+                <h2>Why I made React Pixel?</h2>
                 <p>
-                    &emsp;&ensp;Invidstor is an application aimed towards the young people who want to invest, but are scared off by the towering buildings and masssive greed of wall street.
-                    Todays generation spend most of their time consuming content online. 
-                    The biggest contributor to that content consumption is Youtube. 
-                    There are over 5 Billion* videos watched on Youtube every single day and Invidstor taps into this consumption and combines the content consumer with the eager investor.
+                    &emsp;&ensp;React Pixel is a great combination of 2 of my favorite things: Software and Graphic Design.
+                    The idea of creating a pixel art maker has always been in the back of my mind but it never came to fruition until this year (2021).
+                    This is my first visual editing based program I have created and plan to make many more, eventually making a full desktop photo editing application.
                 </p>
-                <h2>This Project is still in development</h2>
+                <br></br>
+                <h2>What is React Pixel?</h2>
                 <p>
-                    &emsp;&ensp;I am currently developing this project but the algorithms, basic layout, user system, and databasing have been created. 
-                    It is hosted in early alpha form at <a href="https://invidstor.com">Invidstor.com</a> if you would like to see current progress.
-                    If the development website seems to not be communicating with the back-end it means it is currently undergoing productional maintenance. 
+                    &emsp;&ensp;A Pixel art maker that allows you to use brushes and all sorts of different colors to paint on a virtual canvas. 
+                    Drawing with friends is also an option. React Pixel has a MultiDraw feature that uses p2p multiplayer allowing you to draw with a friend in real time. 
+                    Users can save their creations in SVG or PNG file format.
+                    <h4>Features</h4>
+                    <ol><b>
+                        <li>Multiplayer Drawing with up to 8 users using WebRTC</li>
+                        <li>Full custom brush history system saving each keystroke to use for data replication over the network as-well as an Undo/Redo pipeline</li>
+                        <li>File saving in SVG and PNG format</li>
+                        <li>Different Brush sizes/shapes </li>
+                        <li>Unlimited Color Options</li>
+                        <li>Notification system for all actions</li>
+                    </b></ol>
                 </p>
-            </div>
-            <div className="modal" id="invidstor">
-                <button onClick={() => props.close('#invidstor')}>X</button>
+                <br></br>
+                <h2>The Pixel System</h2>
+                <p>
+                    &emsp;&ensp;Despite being a React App, most of the application utilizes plain javascript functions and dom manipulation to handle all user Input.
+                    I use a coordinate based ID system for each pixel and dom queries for editing. 
+                    This may not be the absolute best system but it has worked completety fine for my needs. 
+                    I chose to use React because I wanted the organized structure and state system that React offers.
+                </p>
+                <br></br>
+                <h2>What I learned</h2>
+                <p>
+                    &emsp;&ensp;This project has been a great learning experience for many reasons. 
+                    In fact, I still have alot more to do when it comes to refinements and performance.
+                    Optimizing the app through re-renders using useEffect and different hook functions has taught me alot about how React is actually working under the hood. 
+                    I faced many bugs with almost every React hook that allowed me to look at them much deeper than I would have otherwise.
+                    Making the brush history system proved harder than anything in this project. 
+                    There were so many bugs trying to make it not duplicate each stroke if you pass over it again etc... 
+                    I mostly didnt want to overload the system by adding the same pixel 13 times because of the nature of event listeners but this proved so much harder than I ever imagined. 
+                    Luckily I have gotten through the app so far without any giant bugs, and have learned more than I ever would have if I hadnt created it.
+                </p>
+                <a href="https://nonstopper0.github.io/react-pixel"><img alt="chrome browser logo" src={Chrome}/></a>
             </div>
         </React.Fragment>
     )
