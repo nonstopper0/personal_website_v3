@@ -19,7 +19,8 @@ class Developer extends React.Component {
             skillsrow: true,
             skills: true,
             aboutMe: true,
-            contactMe: true
+            contactMe: true,
+            modalOpen: ''
         }
         this.aboutRef = React.createRef();
         this.portfolioRef = React.createRef();
@@ -162,17 +163,29 @@ class Developer extends React.Component {
         })
     }
 
+    clickedOutsideOfModal = (e) => {
+      console.log(e)
+      if (e.target.className == "blurBox" || e.target.className == "nav-left") {
+        this.closeModal(this.state.modalOpen)
+      }
+    }
+
     openModal = (name) => {
       // name is the id of modal you want to open 
       document.querySelector(".blurBox").style.display = "block";
       document.querySelector(name).style.display = "block";
       document.querySelector(name).style.animation = "modal-open 1s ease forwards"
+      document.body.style.overflow = "hidden"
+      this.setState({modalOpen: name})
+      document.addEventListener('click', this.clickedOutsideOfModal)
     }
 
     closeModal = (name) => {
       // name is the id of modal you want to close 
       document.querySelector(".blurBox").style.display = "none";
       document.querySelector(name).style.animation = "modal-close 1s ease forwards"
+      document.body.style.overflow = null
+      document.removeEventListener('click', this.clickedOutsideOfModal)
     }
 
     scrollController = (refName) => {

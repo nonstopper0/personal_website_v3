@@ -25,7 +25,13 @@ body {
 }
 
 body::-webkit-scrollbar {
-  display: none;
+  background-color: $extremelydark;
+  width: 7px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $accent1;
+  border-radius: 20px;
+  width: 5px;
 }
 
 code {

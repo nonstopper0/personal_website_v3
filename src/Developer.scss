@@ -208,20 +208,20 @@
 
 @keyframes modal-open {
     from {
-        clip-path: circle(0% at 0% 0%);
+        clip-path: inset(0 0 100% 0);
         visibility: visible;
     } to {
         visibility: visible;
-        clip-path: circle(100% at 50% 50%);
+        clip-path: inset(0 0 0 0);
     }
 }
 
 @keyframes modal-close {
     from {
+        clip-path: inset(0 0 0 0);
         visibility: visible;
-        opacity: 1;
     } to {
-        opacity: 0;
+        clip-path: inset(100% 0 0 0);
         visibility: hidden;
     }
 }
