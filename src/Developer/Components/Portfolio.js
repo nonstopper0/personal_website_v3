@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Portfolio.scss"
 
-import GooglePlay from "../SCSS/images/googleplay.png"
-import Chrome from '../SCSS/images/chrome.png'
+import GooglePlay from "../../SCSS/images/googleplay.png"
+import Chrome from '../../SCSS/images/chrome.png'
 
 const Portfolio = (props) => {
     return (

@@ -4,8 +4,8 @@ import Body1 from './Developer/Body1.js'
 import Body2 from './Developer/Body2.js'
 import Body3 from './Developer/Body3.js'
 import Body4 from './Developer/Body4.js'
-import Nav from './Developer/Nav.js'
-import Portfolio from './Developer/Portfolio.js';
+import Nav from './Developer/Components/Nav.js'
+import Portfolio from './Developer/Components/Portfolio.js';
 
 import './Developer.scss';
 import Edge from './SCSS/images/edge.svg'
@@ -45,32 +45,6 @@ class Developer extends React.Component {
             portfolioRows[i].children[0].style.animation = "portfolio-fade-end 1s ease forwards"
           })
         }
-
-
-        // navigations text fade in and out animation triggers
-        let nav = document.querySelector('nav')
-        let navRight = document.querySelector('.nav-right')
-        nav.addEventListener("mouseenter", (e) => {
-          if (e.clientX === 0) {
-            return
-          }
-          navRight.style.left = "70px";
-          for (let i = 0; i < navRight.children.length; i++) {
-            navRight.children[i].style.animation = "nav-fade-in .5s ease-out forwards"
-          }
-        })
-        nav.addEventListener("mouseleave", (e) => {
-          console.log(e)
-          // if the mouse leave the screen to the left. i do not want the nav to dissapear
-          if (e.clientX < 0) {
-            return
-          }
-          for (let i = 0; i < navRight.children.length; i++) {
-            navRight.children[i].style.opacity = "0";
-            navRight.children[i].style.animation = "nav-fade-out .5s ease-out"
-          }
-          navRight.style.left = ""
-        })
     }
 
     onWindowScroll = (e) => {
